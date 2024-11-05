@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linen Hire Service</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="midstay.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            color: #000;
+        }
+        .header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .content {
+            padding: 20px;
+        }
+        .table thead {
+            background-color: #007bff;
+            color: #fff;
+        }
+        .faq-section {
+            width: 80%;
+            margin: auto;
+            font-family: Arial, sans-serif;
+        }
+        .faq-header {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .faq-item {
+            margin-bottom: 10px;
+        }
+        .faq-question {
+            cursor: pointer;
+            padding: 10px;
+            background-color: #f1f1f1;
+            border: 1px solid #ccc;
+        }
+        .faq-answer {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>End of Tenancy Services</h1>
+    </div>
+    <div class="content">
+        <p>Moving out doesn’t have to be a hassle—leave the cleaning to us! Our End of Tenancy Cleaning service ensures your property is spotless and ready for the next tenants, helping you secure your deposit and meet landlord expectations. We offer a thorough top-to-bottom clean, from scrubbing the kitchen to deep-cleaning carpets and upholstery. With our expert team and attention to detail, you can focus on moving while we take care of the rest. 
+        </p>
+    </div>
+    <form>
+        <h2>END OF TENANCY CLEANING QUOTE REQUEST FORM</h2>
+        
+        <div class="form-group">
+            <label for="propertyAddress">Property Address (Street, City, Postal Code):</label>
+            <input type="text" class="form-control" id="propertyAddress" placeholder="Enter address (London only)" pattern="^[A-Z]{1,2}\d[A-Z\d]? ?\d[A-Z]{2}$" required>
+        </div>
+    
+        <div class="form-group">
+            <label>Type of Cleaning Required:</label>
+            <div>
+                <input type="radio" name="cleaningType" value="checkInOut"> Check-in/Check-out Cleaning
+                <input type="radio" name="cleaningType" value="midStay"> Mid-Stay Cleaning
+                <input type="radio" name="cleaningType" value="endOfTenancy"> End-of-Tenancy Deep Clean
+            </div>
+        </div>
+    
+        <div class="form-group">
+            <label>Type of Property:</label>
+            <div>
+                <input type="radio" name="propertyType" value="flat"> Flat
+                <input type="radio" name="propertyType" value="house"> House
+            </div>
+        </div>
+    
+        <div class="form-group">
+            <label>Number of Bedrooms:</label>
+            <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('bedrooms', -1)">-</button>
+            <span id="bedroomsCounter">0</span>
+            <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('bedrooms', 1)">+</button>
+        </div>
+    
+        <div class="form-group">
+            <label>Number of Bathrooms:</label>
+            <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('bathrooms', -1)">-</button>
+            <span id="bathroomsCounter">0</span>
+            <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('bathrooms', 1)">+</button>
+        </div>
+    
+        <div class="form-group">
+            <label>Do you need any upholstery cleaning?</label>
+            <div>
+                <input type="radio" name="upholsteryCleaning" value="yes" onclick="toggleUpholstery(true)"> Yes
+                <input type="radio" name="upholsteryCleaning" value="no" onclick="toggleUpholstery(false)"> No
+            </div>
+        </div>
+    
+        <div id="upholsterySection" style="display: none;">
+            <div class="form-group">
+                <label>Which of these require a deep clean?</label>
+                <div>
+                    <label>Single mattress</label>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('singleMattress', -1)">-</button>
+                    <span id="singleMattressCounter">0</span>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('singleMattress', 1)">+</button>
+                </div>
+                <div>
+                    <label>Double mattress</label>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('doubleMattress', -1)">-</button>
+                    <span id="doubleMattressCounter">0</span>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('doubleMattress', 1)">+</button>
+                </div>
+                <div>
+                    <label>King size mattress</label>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('kingMattress', -1)">-</button>
+                    <span id="kingMattressCounter">0</span>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('kingMattress', 1)">+</button>
+                </div>
+                <div>
+                    <label>Dining chair</label>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('diningChair', -1)">-</button>
+                    <span id="diningChairCounter">0</span>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('diningChair', 1)">+</button>
+                </div>
+                <div>
+                    <label>Arm chair</label>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('armChair', -1)">-</button>
+                    <span id="armChairCounter">0</span>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('armChair', 1)">+</button>
+                </div>
+                <div>
+                    <label>Foot chair</label>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('footChair', -1)">-</button>
+                    <span id="footChairCounter">0</span>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('footChair', 1)">+</button>
+                </div>
+                <div>
+                    <label>Corner chair</label>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('cornerChair', -1)">-</button>
+                    <span id="cornerChairCounter">0</span>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('cornerChair', 1)">+</button>
+                </div>
+                <div>
+                    <label>Single chair</label>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('singleChair', -1)">-</button>
+                    <span id="singleChairCounter">0</span>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('singleChair', 1)">+</button>
+                </div>
+                <div>
+                    <label>2 seater sofa</label>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('twoSeaterSofa', -1)">-</button>
+                    <span id="twoSeaterSofaCounter">0</span>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('twoSeaterSofa', 1)">+</button>
+                </div>
+                <div>
+                    <label>3 seater sofa</label>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('threeSeaterSofa', -1)">-</button>
+                    <span id="threeSeaterSofaCounter">0</span>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('threeSeaterSofa', 1)">+</button>
+                </div>
+                <div>
+                    <label>4 seater sofa</label>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('fourSeaterSofa', -1)">-</button>
+                    <span id="fourSeaterSofaCounter">0</span>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('fourSeaterSofa', 1)">+</button>
+                </div>
+                <div>
+                    <label>5 seater sofa</label>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('fiveSeaterSofa', -1)">-</button>
+                    <span id="fiveSeaterSofaCounter">0</span>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('fiveSeaterSofa', 1)">+</button>
+                </div>
+                <div>
+                    <label>Half Length</label>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('halfLength', -1)">-</button>
+                    <span id="halfLength">0</span>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('halfLength', 1)">+</button>
+                </div>
+                <div>
+                    <label>Full Length</label>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('fullLength', -1)">-</button>
+                    <span id="fullLength">0</span>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('fullLength', 1)">+</button>
+                </div>
+            </div>
+        </div>
+            <div>
+                <label>We assume there is one kitchen and one living room. Are there any additional rooms and appliances which require cleaning?</label>
+                <div>
+                    <label>Study</label>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('study', -1)">-</button>
+                    <span id="studyCounter">0</span>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('study', 1)">+</button>
+                </div>
+                <div>
+                    <label>Extra oven</label>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('extraOven', -1)">-</button>
+                    <span id="extraOvenCounter">0</span>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('extraOven', 1)">+</button>
+                </div>
+                <div>
+                    <label>Double oven</label>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('doubleOven', -1)">-</button>
+                    <span id="doubleOvenCounter">0</span>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('doubleOven', 1)">+</button>
+                </div>
+                <div>
+                    <label>Extra fridge</label>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('extraFridge', -1)">-</button>
+                    <span id="extraFridgeCounter">0</span>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('extraFridge', 1)">+</button>
+                </div>
+                <div>
+                    <label>Extra freezer</label>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('extraFreezer', -1)">-</button>
+                    <span id="extraFreezerCounter">0</span>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('extraFreezer', 1)">+</button>
+                </div>
+                <div>
+                    <label>Fridge Freezer</label>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('fridgeFreezer', -1)">-</button>
+                    <span id="fridgeFreezerCounter">0</span>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('fridgeFreezer', 1)">+</button>
+                </div>
+                <div>
+                    <label>Balcony</label>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('balcony', -1)">-</button>
+                    <span id="balconyCounter">0</span>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('balcony', 1)">+</button>
+                </div>
+                <div>
+                    <label>Garage</label>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('garage', -1)">-</button>
+                    <span id="garageCounter">0</span>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('garage', 1)">+</button>
+                </div>
+                <div>
+                    <label>Conservatory</label>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('conservatory', -1)">-</button>
+                    <span id="conservatoryCounter">0</span>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('conservatory', 1)">+</button>
+                </div>
+                <div>
+                    <label>Utility room</label>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('utilityRoom', -1)">-</button>
+                    <span id="utilityRoomCounter">0</span>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('utilityRoom', 1)">+</button>
+                </div>
+                <div>
+                    <label>Walk-in wardrobe</label>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('walkInWardrobe', -1)">-</button>
+                    <span id="walkInWardrobeCounter">0</span>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('walkInWardrobe', 1)">+</button>
+                </div>
+                <div>
+                    <label>Extra Dishwasher</label>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('extraDishwasher', -1)">-</button>
+                    <span id="extraDishwasherCounter">0</span>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('extraDishwasher', 1)">+</button>
+                </div>
+                <div>
+                    <label>Extra Washing machine</label>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('extraWashingMachine', -1)">-</button>
+                    <span id="extraWashingMachineCounter">0</span>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('extraWashingMachine', 1)">+</button>
+                </div>
+                <div>
+                    <label>Basement</label>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('basement', -1)">-</button>
+                    <span id="basementCounter">0</span>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('basement', 1)">+</button>
+                </div>
+                <div>
+                    <label>Attic</label>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('attic', -1)">-</button>
+                    <span id="atticCounter">0</span>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('attic', 1)">+</button>
+                </div>
+                <div>
+                    <label>Other:</label>
+                    <input type="text" class="form-control" id="otherRooms">
+                </div>
+            </div>
+            <div class="form-group">
+                <label>What kind of carpet cleaning do you need?</label>
+                <div>
+                    <input type="radio" name="carpetCleaning" value="vacuuming"> Vacuuming only
+                    <input type="radio" name="carpetCleaning" value="deepCleaning" onclick="toggleCarpetDeepClean(true)"> Deep cleaning
+                    <input type="radio" name="carpetCleaning" value="noCarpets" onclick="toggleCarpetDeepClean(false)"> No carpets
+                </div>
+            </div>
+        
+            <div class="form-group">
+                <label>What kind of carpet cleaning do you need?</label>
+                <div>
+                    <input type="radio" name="carpetCleaning" value="vacuuming"> Vacuuming only
+                    <input type="radio" name="carpetCleaning" value="deepCleaning" onclick="toggleCarpetDeepClean(true)"> Deep cleaning
+                    <input type="radio" name="carpetCleaning" value="noCarpets" onclick="toggleCarpetDeepClean(false)"> No carpets
+                </div>
+            </div>
+        
+            <div id="carpetDeepCleanSection" style="display: none;">
+                <div class="form-group">
+                    <label>What rooms require a carpet deep clean?</label>
+                    <div>
+                        <label>Bedroom</label>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('bedroomCarpet', -1)">-</button>
+                        <span id="bedroomCarpetCounter">0</span>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('bedroomCarpet', 1)">+</button>
+                    </div>
+                    <div>
+                        <label>Living room</label>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('livingRoomCarpet', -1)">-</button>
+                        <span id="livingRoomCarpetCounter">0</span>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('livingRoomCarpet', 1)">+</button>
+                    </div>
+                    <div>
+                        <label>Hallway</label>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('hallwayCarpet', -1)">-</button>
+                        <span id="hallwayCarpetCounter">0</span>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('hallwayCarpet', 1)">+</button>
+                    </div>
+                    <div>
+                        <label>Landing</label>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('landingCarpet', -1)">-</button>
+                        <span id="landingCarpetCounter">0</span>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('landingCarpet', 1)">+</button>
+                    </div>
+                    <div>
+                        <label>Dining</label>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('diningCarpet', -1)">-</button>
+                        <span id="diningCarpetCounter">0</span>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('diningCarpet', 1)">+</button>
+                    </div>
+                    <div>
+                        <label>Stairs (£1 per stair step)</label>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('stairsCarpet', -1)">-</button>
+                        <span id="stairsCarpetCounter">0</span>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('stairsCarpet', 1)">+</button>
+                    </div>
+                    <div>
+                        <label>Other:</label>
+                        <input type="text" class="form-control" id="otherCarpet">
+                    </div>
+                </div>
+            </div>
+        
+            <div class="form-group">
+                <label>How can the operative access the building?</label>
+                <div>
+                    <input type="radio" name="accessMethod" value="atProperty"> I will be at the property
+                    <input type="radio" name="accessMethod" value="concierge"> Through a concierge
+                    <input type="radio" name="accessMethod" value="keySafe"> Key safe
+                    <input type="radio" name="accessMethod" value="hiddenKey"> Hidden key
+                    <input type="radio" name="accessMethod" value="estateAgent"> Using Keys collected from the local estate agent
+                </div>
+            </div>
+        
+            <div class="form-group">
+                <label>Do you have any special cleaning requests or instructions?</label>
+                <textarea class="form-control" rows="3"></textarea>
+            </div>
+        
+            <div class="form-group">
+                <label>Preferred Date:</label>
+                <input type="date" class="form-control">
+                <p>(Same day booking +£30, next day booking +£20)</p>
+            </div>
+        
+            <div class="form-group">
+                <label>Any ongoing maintenance or repairs needed in the property that should be noted?</label>
+                <textarea class="form-control" rows="3"></textarea>
+            </div>
+        
+            <div class="form-group">
+                <label>Contact Information</label>
+                <div>
+                    <label>Name:</label>
+                    <input type="text" class="form-control">
+                </div>
+                <div>
+                    <label>Phone Number:</label>
+                    <input type="tel" class="form-control">
+                </div>
+                <div>
+                    <label>Email Address:</label>
+                    <input type="email" class="form-control">
+                </div>
+            </div>
+        
+            <div class="form-group">
+                <label>How did you hear about us?</label>
+                <div>
+                    <input type="radio" name="referralSource" value="google"> Google Search
+                    <input type="radio" name="referralSource" value="referral"> Referral
+                    <input type="radio" name="referralSource" value="socialMedia"> Social Media
+                    <input type="radio" name="referralSource" value="other"> Other: <input type="text" class="form-control" style="display: inline-block; width: auto;">
+                </div>
+            </div>
+        
+            <div class="form-group">
+                <label>Important Notes</label>
+                <ul>
+                    <li>The property must be completely empty before our cleaning team arrives for end of tenancy cleaning. Any remaining items can obstruct the thorough, professional cleaning process.</li>
+                    <li>If it's not possible to fully empty the property, please consolidate your belongings in one room or a designated corner to avoid interference with the cleaning.</li>
+                    <li>The refrigerator must be fully defrosted before our cleaners arrive to ensure proper cleaning.</li>
+                </ul>
+            </div>
+        
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <!--FAQS section-->
+        <div class="faq-section">
+            <div class="faq-header">FAQs</div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Do you clean walls and get rid of wall marks?</div>
+                <div class="faq-answer">No, we cannot clean walls and get rid of marks. This is best done prior to our end of tenancy cleaning service commencing.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Do I need to be present during the cleaning?</div>
+            <div class="faq-answer">No, you don't need to be present. As long as we have access to the property (key, entry code, etc.), we can complete the cleaning while you're away. We will notify you once the cleaning is done.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">What happens if my landlord is not satisfied with the cleaning?</div>
+            <div class="faq-answer">We offer a satisfaction guarantee. If your landlord or letting agent raises any issues within 24-48 hours of the cleaning, we will return to the property and re-clean the areas in question at no extra charge.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">What happens if damages are found during the cleaning?</div>
+            <div class="faq-answer">If we discover any damages during the cleaning process, we will notify you immediately. However, we are not responsible for pre-existing damages caused by tenants or previous cleaners.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Can you assist with inventory checks at the end of the tenancy?</div>
+            <div class="faq-answer">We can assist with basic inventory checks (cleaning-related), such as noting if any items need replacing (light bulbs, batteries, etc.). However, for formal inventory services, it’s best to use a specialist inventory company.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">Do I have to defrost my fridge and freezer in advance of the deep clean?</div>
+            <div class="faq-answer">Please ensure your fridge and/or freezer is defrosted at least 24 hours before the deep cleaning service. This allows our team to thoroughly clean the appliance, as we are unable to clean it while it is still frozen.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">Are kitchen appliances included in the end of tenancy cleaning?</div>
+            <div class="faq-answer">Yes, absolutely! A thorough end of tenancy clean wouldn’t be complete without cleaning the kitchen appliances. As part of our standard service, we clean one of each of the following: oven, fridge/freezer, dishwasher, microwave, and washing machine.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Can you pick up keys from my local estate agents?</div>
+            <div class="faq-answer">Yes, we can collect and return keys from your local estate agent at no extra charge if they are within a 10-minute walk of the property. For distances beyond 10 minutes, a small fee of £10 to £20 will be added to the final bill, depending on the location.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">Do I have to cover the Congestion Charge, ULEZ, or parking fees?</div>
+            <div class="faq-answer">Yes. If you live in the Congestion Charge or Ultra Low Emission Zone (ULEZ) you will have to cover the fees. The cost of the Congestion Charge zone is £15 per day and the cost of ULEZ is £12.50 per day. Both charges are applicable 7 days a week. Congestion Charge operates from 7:00 am – 22:00 pm, while ULEZ operates 24 hours a day. Our cleaning teams will try to find free parking. However, if they are unable to find free parking we will ask you to cover the fees. These are the only charges that may apply to you, there are no hidden fees.</div>
+        </div>
+    </div>
+        <footer class="footer-section py-4 bg-dark text-light">
+            <div class="container">
+              <div class="row">
+                
+                <!-- Company Information -->
+                <div class="col-md-4 mb-3">
+                  <h5>About Our Company</h5>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae est at ligula faucibus laoreet.</p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="col-md-4 mb-3">
+                  <h5>Quick Links</h5>
+                  <ul class="list-unstyled">
+                    <li><a href="#services" class="text-light">Our Services</a></li>
+                    <li><a href="#about" class="text-light">About Us</a></li>
+                    <li><a href="#contact" class="text-light">Contact Us</a></li>
+                    <li><a href="#faq" class="text-light">FAQs</a></li>
+                  </ul>
+                </div>
+                
+                <!-- Legal Links -->
+                <div class="col-md-4 mb-3">
+                  <h5>Legal</h5>
+                  <ul class="list-unstyled">
+                    <li><a href="#privacy-policy" class="text-light">Privacy Policy</a></li>
+                    <li><a href="#terms-of-service" class="text-light">Terms of Service</a></li>
+                  </ul>
+                </div>
+                
+              </div>
+              <div class="text-center mt-4">
+                <p class="mb-0">&copy; 2024 Cleaning Service. All rights reserved.</p>
+              </div>
+            </div>
+          </footer>
+
+        
+        <script>
+            document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const answer = item.nextElementSibling;
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+            function updateCounter(id, increment) {
+                const counter = document.getElementById(id + 'Counter');
+                let count = parseInt(counter.textContent);
+                count = Math.max(0, count + increment);
+                counter.textContent = count;
+            }
+        
+            function toggleUpholstery(show) {
+                const section = document.getElementById('upholsterySection');
+                section.style.display = show ? 'block' : 'none';
+            }
+        
+            function toggleCarpetDeepClean(show) {
+                const section = document.getElementById('carpetDeepCleanSection');
+                section.style.display = show ? 'block' : 'none';
+            }
+        </script>
+        
+                
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cleaning Service</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-family: Arial, sans-serif;
+    }
+    th, td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+    th {
+        background-color: #f2f2f2;
+        color: #333;
+    }
+    tr:hover {
+        background-color: #f5f5f5;
+    }
+    .faq-section {
+            width: 80%;
+            margin: auto;
+            font-family: Arial, sans-serif;
+        }
+    .faq-header {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+    .faq-item {
+            margin-bottom: 10px;
+        }
+    .faq-question {
+            cursor: pointer;
+            padding: 10px;
+            background-color: #f1f1f1;
+            border: 1px solid #ccc;
+        }
+    .faq-answer {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section with Logo and Menu -->
+  <header class="d-flex justify-content-between align-items-center p-3">
+    <div class="logo">
+      <img src="logo.png" alt="Cleaning Service Logo" style="width: 50px;">
+      <span>Cleaning Service</span>
+    </div>
+    <nav class="navbar">
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Services
+          </a>
+          <div class="dropdown-menu" aria-labelledby="servicesDropdown">
+            <a class="dropdown-item" href="endoftenancy.html">End of tenancy</a>
+            <a class="dropdown-item" href="midstay.html">Midstay Shortlet Cleaning</a>
+            <a class="dropdown-item" href="airbnb.html">Airbnb Cleaning</a>
+            <a class="dropdown-item" href="linenhire.html">Linen Hire</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Mid Stay Short Let Cleaning Section -->
+  <section class="container mt-5">
+    <h2>MID STAY SHORT LET CLEANING</h2>
+    <p>With our mid-stay service, your property stays as welcoming as it was on check-in, enhancing guest satisfaction, improving reviews, and maintaining your property's appeal for future bookings.</p>
+    
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Property Type</th>
+          <th>Flat</th>
+          <th>House</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Studio flat</td>
+          <td>xx</td>
+          <td>xx</td>
+        </tr>
+        <tr>
+          <td>1 bedroom</td>
+          <td>xx</td>
+          <td>xx</td>
+        </tr>
+        <tr>
+          <td>2 bedrooms 1 bathroom</td>
+          <td>xxx</td>
+          <td>xxx</td>
+        </tr>
+        <tr>
+          <td>2 bedrooms 2 bathrooms</td>
+          <td>xxx</td>
+          <td>xxx</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <!--FAQs Section-->
+  <div class="faq-section">
+    <div class="faq-header">FAQs</div>
+    
+    <div class="faq-item">
+        <div class="faq-question">Can you clean during the guest’s stay? (Airbnb)</div>
+        <div class="faq-answer">Yes, we offer mid-stay cleaning services if requested by the host or guest. This includes refreshing linens, restocking supplies, and tidying up common areas.</div>
+    </div>
+    
+    <div class="faq-item">
+        <div class="faq-question">Do you provide toiletries and other consumables? (Airbnb)</div>
+        <div class="faq-answer">Yes, we can supply toiletries such as shampoo, soap, and toilet paper if requested. This service can be included in your cleaning package or ordered separately.</div>
+    </div>
+        
+    <div class="faq-item">
+        <div class="faq-question">How do we book your cleaning and linen hire services? (Airbnb)</div>
+        <div class="faq-answer">You can book through our website, via email or by calling our customer service team. Please provide the details of your property, dates, and any specific requests, and we will provide a quote and confirm availability. Once booked, you will receive a confirmation email with the details of your appointment.</div>
+    </div>
+        
+    <div class="faq-item">
+        <div class="faq-question">Can you restock supplies like toiletries, toilet paper, and coffee? (Airbnb)</div>
+        <div class="faq-answer">Yes, if you provide the supplies, we can restock them for each guest. If you need us to purchase the supplies, we can do so for an additional fee.</div>
+    </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>document.querySelectorAll('.faq-question').forEach(item => {
+    item.addEventListener('click', () => {
+        const answer = item.nextElementSibling;
+        answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+    });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+.main-section {
+    padding: 50px 0;
+}
+.main-section img {
+    max-width: 100%;
+    height: auto;
+}
+.main-section .content {
+    padding-left: 30px;
+}
+.main-section h1 {
+    color: #007bff; /* Bootstrap primary color */
+}
+.main-section h2 {
+    color: #333;
+}
+.main-section .btn-primary {
+    background-color: #ffc107; /* Bootstrap warning color */
+    border-color: #ffc107; /* Bootstrap warning color */
+}
+.main-section .btn-primary:hover {
+    background-color: #e0a800; /* Darker shade of warning color */
+    border-color: #d39e00; /* Darker shade of warning color */
+}
+.services-section {
+    padding: 50px 0;
+        }
+.services-section h2 {
+    color: #007bff; /* Bootstrap primary color */
+    text-align: center;
+    margin-bottom: 40px;
+    }
+.card {
+    margin-bottom: 30px;
+        }
+.card img {
+            max-width: 100%;
+            height: auto;
+        }
+.card-title {
+            color: #007bff; /* Bootstrap primary color */
+        }
+.card-text {
+            color: #333;
+        }
+.btn-primary {
+            background-color: #ffc107; /* Bootstrap warning color */
+            border-color: #ffc107; /* Bootstrap warning color */
+        }
+.btn-primary:hover {
+            background-color: #e0a800; /* Darker shade of warning color */
+            border-color: #d39e00; /* Darker shade of warning color */
+        }
+        .faq-section {
+            padding: 50px 0;
+        }
+        .faq-section h2 {
+            color: #007bff; /* Bootstrap primary color */
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .card-header {
+            background-color: #007bff; /* Bootstrap primary color */
+            color: #fff;
+        }
+        .card-body {
+            color: #333;
+        }
+        .card-body a {
+            color: #007bff;
+            text-decoration: underline;
+        }
+        .card-body a:hover {
+            color: #0056b3; /* Darker shade of primary color */
+        }
+        .intro-section {
+            padding: 50px 0;
+            background-color: #007bff; /* Bootstrap primary color */
+            color: #ffc107; /* Bootstrap warning color */
+        }
+        .tasks-section, .pricing-section {
+            padding: 50px 0;
+        }
+        .tasks-section h3, .pricing-section h3 {
+            color: #007bff; /* Bootstrap primary color */
+        }
+        .tasks-section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .tasks-section ul li {
+            background: #ffc107; /* Bootstrap warning color */
+            color: #007bff; /* Bootstrap primary color */
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .pricing-table th, .pricing-table td {
+            border: 1px solid #007bff; /* Bootstrap primary color */
+            padding: 10px;
+            text-align: center;
+        }
+        .pricing-table th {
+            background-color: #007bff; /* Bootstrap primary color */
+            color: #ffc107; /* Bootstrap warning color */
+        }
+        .pricing-table td {
+            background-color: #ffc107; /* Bootstrap warning color */
+            color: #007bff; /* Bootstrap primary color */
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+          }
+          
+          
+          form {
+            max-width: 90%;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f8f9fa; /* Bootstrap's light background color */
+          }
+          
+          .inputgrp {
+            display: block;
+            margin-top: 10px;
+          }
+          
+          input[type="text"],
+          input[type="number"],
+          input[type="date"],
+          textarea {
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+          }
+          
+          button {
+            padding: 5px 10px;
+            margin: 5px;
+          }
+          
+          #bedroomsBathrooms,
+          #midStayFrequency,
+          #linenDetails {
+            display: none;
+          }
+          

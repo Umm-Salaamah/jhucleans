@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cleaning Service</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!--Header-->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+            <a class="navbar-brand text-warning" href="#">Logo</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-warning" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-warning" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-warning" href="services.html" id="servicesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Services
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="servicesDropdown">
+                            <a class="dropdown-item" href="airbnb.html">Airbnb</a>
+                            <a class="dropdown-item" href="deepclean.html">Deep Clean</a>
+                            <a class="dropdown-item" href="linenhire.html">Linen Hire</a>
+                            <a class="dropdown-item" href="midstay.html">Midstay Shortlet Clean</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item dropdown-toggle" href="#" id="airbnbDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Airbnb
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="airbnbDropdown">
+                                <a class="dropdown-item" href="linenair.html">Linen Hire</a>
+                                <a class="dropdown-item" href="midstayair.html">Midstay Shortlet Clean</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-warning" href="register.html">Signin/Login</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!--Main Section-->
+    <main class="container mt-5">
+        <div class="main-section row align-items-center">
+            <div class="col-md-6">
+                <img src="your-image-url.jpg" alt="Cleaning Service">
+            </div>
+            <div class="col-md-6 content">
+                <h1>Welcome to Jhu Cleans</h1>
+                <h2>Your Trusted Cleaning Partner</h2>
+                <p>Experience the best cleaning services tailored to your needs. From end-of-tenancy cleaning to Airbnb turnover services, we ensure your space is spotless and welcoming.</p>
+                <a href="#" class="btn btn-primary">Get Started</a>
+            </div>
+        </div>
+    </main>
+    <!--Request Form-->
+    <!-- Property Address Section -->
+<form id="cleaningServiceForm">
+        <h2>CLEANING SERVICE QUOTE REQUEST FORM</h2>
+    <label for="propertyAddress">Property Address (Postal Code):</label>
+    <input type="text" id="propertyAddress" name="propertyAddress" required pattern=".*London.*">
+
+    <!-- Bed Sizes Section -->
+    <label>What type of bed sizes need linens? (Check all that apply):</label>
+    <div>
+  <label>Single</label>
+  <button type="button" onclick="changeValue('singleBeds', -1)">-</button>
+  <input type="number" id="singleBeds" name="singleBeds" value="0" min="0">
+  <button type="button" onclick="changeValue('singleBeds', 1)">+</button>
+    </div>
+    <div>
+  <label>Double</label>
+  <button type="button" onclick="changeValue('doubleBeds', -1)">-</button>
+  <input type="number" id="doubleBeds" name="doubleBeds" value="0" min="0">
+  <button type="button" onclick="changeValue('doubleBeds', 1)">+</button>
+    </div>
+    <div>
+  <label>King</label>
+  <button type="button" onclick="changeValue('kingBeds', -1)">-</button>
+  <input type="number" id="kingBeds" name="kingBeds" value="0" min="0">
+  <button type="button" onclick="changeValue('kingBeds', 1)">+</button>
+    </div>
+<div>
+  <label>Super King</label>
+  <button type="button" onclick="changeValue('superKingBeds', -1)">-</button>
+  <input type="number" id="superKingBeds" name="superKingBeds" value="0" min="0">
+  <button type="button" onclick="changeValue('superKingBeds', 1)">+</button>
+</div>
+
+<!-- Additional Bedding Items Section -->
+<label>Do you require any additional bedding items? (Check all that apply):</label>
+<div>
+  <label>Duvets</label>
+  <div>
+    <label>Single</label>
+    <button type="button" onclick="changeValue('duvetSingle', -1)">-</button>
+    <input type="number" id="duvetSingle" name="duvetSingle" value="0" min="0">
+    <button type="button" onclick="changeValue('duvetSingle', 1)">+</button>
+  </div>
+  <div>
+    <label>Double</label>
+    <button type="button" onclick="changeValue('duvetDouble', -1)">-</button>
+    <input type="number" id="duvetDouble" name="duvetDouble" value="0" min="0">
+    <button type="button" onclick="changeValue('duvetDouble', 1)">+</button>
+  </div>
+  <div>
+    <label>King</label>
+    <button type="button" onclick="changeValue('duvetKing', -1)">-</button>
+    <input type="number" id="duvetKing" name="duvetKing" value="0" min="0">
+    <button type="button" onclick="changeValue('duvetKing', 1)">+</button>
+  </div>
+  <div>
+    <label>Super King</label>
+    <button type="button" onclick="changeValue('duvetSuperKing', -1)">-</button>
+    <input type="number" id="duvetSuperKing" name="duvetSuperKing" value="0" min="0">
+    <button type="button" onclick="changeValue('duvetSuperKing', 1)">+</button>
+  </div>
+</div>
+
+<div>
+  <label>Pillows</label>
+  <button type="button" onclick="changeValue('pillows', -1)">-</button>
+  <input type="number" id="pillows" name="pillows" value="0" min="0">
+  <button type="button" onclick="changeValue('pillows', 1)">+</button>
+</div>
+
+<div>
+  <label>Pillow Protector</label>
+  <button type="button" onclick="changeValue('pillowProtector', -1)">-</button>
+  <input type="number" id="pillowProtector" name="pillowProtector" value="0" min="0">
+  <button type="button" onclick="changeValue('pillowProtector', 1)">+</button>
+</div>
+
+<div>
+  <label>Mattress Protectors</label>
+  <div>
+    <label>Single</label>
+    <button type="button" onclick="changeValue('mattressSingle', -1)">-</button>
+    <input type="number" id="mattressSingle" name="mattressSingle" value="0" min="0">
+    <button type="button" onclick="changeValue('mattressSingle', 1)">+</button>
+  </div>
+  <div>
+    <label>Double</label>
+    <button type="button" onclick="changeValue('mattressDouble', -1)">-</button>
+    <input type="number" id="mattressDouble" name="mattressDouble" value="0" min="0">
+    <button type="button" onclick="changeValue('mattressDouble', 1)">+</button>
+  </div>
+  <div>
+    <label>King</label>
+    <button type="button" onclick="changeValue('mattressKing', -1)">-</button>
+    <input type="number" id="mattressKing" name="mattressKing" value="0" min="0">
+    <button type="button" onclick="changeValue('mattressKing', 1)">+</button>
+  </div>
+  <div>
+    <label>Super King</label>
+    <button type="button" onclick="changeValue('mattressSuperKing', -1)">-</button>
+    <input type="number" id="mattressSuperKing" name="mattressSuperKing" value="0" min="0">
+    <button type="button" onclick="changeValue('mattressSuperKing', 1)">+</button>
+  </div>
+</div>
+
+<div>
+  <label>Blankets</label>
+  <button type="button" onclick="changeValue('blankets', -1)">-</button>
+  <input type="number" id="blankets" name="blankets" value="0" min="0">
+  <button type="button" onclick="changeValue('blankets', 1)">+</button>
+</div>
+
+<div>
+  <label>Kitchen Towels</label>
+  <button type="button" onclick="changeValue('kitchenTowels', -1)">-</button>
+  <input type="number" id="kitchenTowels" name="kitchenTowels" value="0" min="0">
+  <button type="button" onclick="changeValue('kitchenTowels', 1)">+</button>
+</div>
+
+<div>
+  <label>Bath mats</label>
+  <button type="button" onclick="changeValue('bathMats', -1)">-</button>
+  <input type="number" id="bathMats" name="bathMats" value="0" min="0">
+  <button type="button" onclick="changeValue('bathMats', 1)">+</button>
+</div>
+
+<div>
+  <label>Bathrobe and pair of slippers</label>
+  <button type="button" onclick="changeValue('bathrobeSlippers', -1)">-</button>
+  <input type="number" id="bathrobeSlippers" name="bathrobeSlippers" value="0" min="0">
+  <button type="button" onclick="changeValue('bathrobeSlippers', 1)">+</button>
+</div>
+
+<!-- Consumables Section -->
+<label>Would you like to include consumable replacement?</label>
+<input type="radio" id="consumablesYes" name="consumables" value="Yes">
+<label for="consumablesYes">Yes</label>
+<input type="radio" id="consumablesNo" name="consumables" value="No">
+<label for="consumablesNo">No</label>
+
+<div id="consumablesDetails">
+  <label>Consumables Required (Check all that apply):</label>
+  
+  <div>
+    <label>Toilet Paper pack</label>
+    <button type="button" onclick="changeValue('toiletPaper', -1)">-</button>
+    <input type="number" id="toiletPaper" name="toiletPaper" value="0" min="0">
+    <button type="button" onclick="changeValue('toiletPaper', 1)">+</button>
+  </div>
+  
+  <div>
+    <label>Paper Towels pack</label>
+    <button type="button" onclick="changeValue('paperTowels', -1)">-</button>
+    <input type="number" id="paperTowels" name="paperTowels" value="0" min="0">
+    <button type="button" onclick="changeValue('paperTowels', 1)">+</button>
+  </div>
+  <div>
+    <label>Toiletries set</label>
+    <button type="button" onclick="changeValue('toiletriesSet', -1)">-</button>
+    <input type="number" id="toiletriesSet" name="toiletriesSet" value="0" min="0">
+    <button type="button" onclick="changeValue('toiletriesSet', 1)">+</button>
+  </div>
+  
+  <div>
+    <label>Hand soap</label>
+    <button type="button" onclick="changeValue('handSoap', -1)">-</button>
+    <input type="number" id="handSoap" name="handSoap" value="0" min="0">
+    <button type="button" onclick="changeValue('handSoap', 1)">+</button>
+  </div>
+  
+  <div>
+    <label>Body soap</label>
+    <button type="button" onclick="changeValue('bodySoap', -1)">-</button>
+    <input type="number" id="bodySoap" name="bodySoap" value="0" min="0">
+    <button type="button" onclick="changeValue('bodySoap', 1)">+</button>
+  </div>
+  
+  <div>
+    <label>Shampoo</label>
+    <button type="button" onclick="changeValue('shampoo', -1)">-</button>
+    <input type="number" id="shampoo" name="shampoo" value="0" min="0">
+    <button type="button" onclick="changeValue('shampoo', 1)">+</button>
+  </div>
+  
+  <div>
+    <label>Conditioner</label>
+    <button type="button" onclick="changeValue('conditioner', -1)">-</button>
+    <input type="number" id="conditioner" name="conditioner" value="0" min="0">
+    <button type="button" onclick="changeValue('conditioner', 1)">+</button>
+  </div>
+  
+  <div>
+    <label>Shower cap</label>
+    <button type="button" onclick="changeValue('showerCap', -1)">-</button>
+    <input type="number" id="showerCap" name="showerCap" value="0" min="0">
+    <button type="button" onclick="changeValue('showerCap', 1)">+</button>
+  </div>
+  
+  <div>
+    <label>Toothbrush & Toothpaste</label>
+    <button type="button" onclick="changeValue('toothbrushToothpaste', -1)">-</button>
+    <input type="number" id="toothbrushToothpaste" name="toothbrushToothpaste" value="0" min="0">
+    <button type="button" onclick="changeValue('toothbrushToothpaste', 1)">+</button>
+  </div>
+  
+  <div>
+    <label>Dishwasher Tablets pack</label>
+    <button type="button" onclick="changeValue('dishwasherTablets', -1)">-</button>
+    <input type="number" id="dishwasherTablets" name="dishwasherTablets" value="0" min="0">
+    <button type="button" onclick="changeValue('dishwasherTablets', 1)">+</button>
+  </div>
+  
+  <div>
+    <label>Coffee</label>
+    <button type="button" onclick="changeValue('coffee', -1)">-</button>
+    <input type="number" id="coffee" name="coffee" value="0" min="0">
+    <button type="button" onclick="changeValue('coffee', 1)">+</button>
+  </div>
+  
+  <div>
+    <label>Tea</label>
+    <button type="button" onclick="changeValue('tea', -1)">-</button>
+    <input type="number" id="tea" name="tea" value="0" min="0">
+    <button type="button" onclick="changeValue('tea', 1)">+</button>
+  </div>
+  
+  <div>
+    <label>Sugar</label>
+    <button type="button" onclick="changeValue('sugar', -1)">-</button>
+    <input type="number" id="sugar" name="sugar" value="0" min="0">
+    <button type="button" onclick="changeValue('sugar', 1)">+</button>
+  </div>
+  
+  <div>
+    <label>Cleaning sponges</label>
+    <button type="button" onclick="changeValue('cleaningSponges', -1)">-</button>
+    <input type="number" id="cleaningSponges" name="cleaningSponges" value="0" min="0">
+    <button type="button" onclick="changeValue('cleaningSponges', 1)">+</button>
+  </div>
+  
+  <div>
+    <label>Garbage bag</label>
+    <button type="button" onclick="changeValue('garbageBag', -1)">-</button>
+    <input type="number" id="garbageBag" name="garbageBag" value="0" min="0">
+    <button type="button" onclick="changeValue('garbageBag', 1)">+</button>
+  </div>
+  
+  <div>
+    <label>Other:</label>
+    <input type="text" id="otherConsumables" name="otherConsumables">
+  </div>
+</div>
+
+<!-- Access Details Section -->
+<label>How can the operative access the building?</label>
+<div>
+  <input type="radio" id="accessAtProperty" name="accessMethod" value="I will be at the property">
+  <label for="accessAtProperty">I will be at the property</label>
+</div>
+<div>
+  <input type="radio" id="accessConcierge" name="accessMethod" value="Through a concierge">
+  <label for="accessConcierge">Through a concierge</label>
+</div>
+<div>
+  <input type="radio" id="accessKeySafe" name="accessMethod" value="Key safe">
+  <label for="accessKeySafe">Key safe</label>
+</div>
+<div>
+  <input type="radio" id="accessHiddenKey" name="accessMethod" value="Hidden key">
+  <label for="accessHiddenKey">Hidden key</label>
+</div>
+<div>
+  <input type="radio" id="accessEstateAgent" name="accessMethod" value="Using Keys collected from the local estate agent">
+  <label for="accessEstateAgent">Using Keys collected from the local estate agent</label>
+</div>
+
+<label>Do you have any special requests or instructions?</label>
+<textarea id="specialRequests" name="specialRequests"></textarea>
+
+<label>Preferred Date for Delivery and Collection:</label>
+<input type="date" id="deliveryDate" name="deliveryDate">
+
+<label>Contact Information</label>
+<div>
+  <label for="contactName">Name:</label>
+  <input type="text" id="contactName" name="contactName" required>
+</div>
+<div>
+  <label for="contactPhone">Phone Number:</label>
+  <input type="tel" id="contactPhone" name="contactPhone" required>
+</div>
+<div>
+  <label for="contactEmail">Email Address:</label>
+  <input type="email" id="contactEmail" name="contactEmail" required>
+</div>
+
+<label>How did you hear about us?</label>
+<div>
+  <input type="radio" id="googleSearch" name="referralSource" value="Google Search">
+  <label for="googleSearch">Google Search</label>
+</div>
+<div>
+  <input type="radio" id="referral" name="referralSource" value="Referral">
+  <label for="referral">Referral</label>
+</div>
+<div>
+  <input type="radio" id="socialMedia" name="referralSource" value="Social Media">
+  <label for="socialMedia">Social Media</label>
+</div>
+<div>
+  <input type="radio" id="otherSource" name="referralSource" value="Other">
+  <label for="otherSource">Other:</label>
+  <input type="text" id="otherReferralSource" name="otherReferralSource">
+</div>
+<button type="submit">Submit</button>
+</form>
+
+    <!--FAQs Section-->
+    <main class="container mt-5">
+        <section class="faq-section">
+            <h2>Linen Hire Frequently Asked Questions</h2>
+            <div class="accordion" id="linenHireFaqAccordion">
+                <div class="card">
+                    <div class="card-header" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        What happens if the linens are damaged or stained?
+                    </div>
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#linenHireFaqAccordion">
+                        <div class="card-body">
+                            <p>We understand normal wear and tear, but any significant damage (such as burns, rips, or permanent stains) may result in an additional charge to cover the replacement cost.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Can I add extra items like duvets, pillows, or mattress protectors?
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#linenHireFaqAccordion">
+                        <div class="card-body">
+                            <p>Absolutely! You can request additional items such as duvets, pillows, or mattress protectors at an extra cost. Simply let us know in advance.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        What is the process for returning the linens?
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#linenHireFaqAccordion">
+                        <div class="card-body">
+                            <p>After the 10-day hire period, we will arrange a collection of the linens. If you require an extension or fresh linens, we can provide that as well. Failure to return linens within the agreed time may incur a late fee.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingFour" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        How much notice do I need to give for linen hire?
+                    </div>
+                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#linenHireFaqAccordion">
+                        <div class="card-body">
+                            <p>We recommend placing your linen hire request at least 48 hours in advance to ensure availability and delivery. However, we may be able to accommodate last-minute requests, depending on availability.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingFive" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        Do you provide consumables along with linen hire?
+                    </div>
+                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#linenHireFaqAccordion">
+                        <div class="card-body">
+                            <p>Yes, we can also supply consumables like toiletries, toilet paper, and kitchen essentials as part of our service. This is available at an additional cost and can be arranged when placing your linen order.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingSix" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                        Can you wash my own sheets and towels?
+                    </div>
+                    <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#linenHireFaqAccordion">
+                        <div class="card-body">
+                            <p>At Jhu Cleans Linen division, we provide hotel-grade linen for hire and do not wash customer-owned goods.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!--Footer Section-->
+    <footer class="bg-primary text-warning text-center py-3">
+        <div class="container">
+            <p>About Us: We provide top-notch cleaning services tailored to your needs.</p>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a class="text-warning" href="index.html">Home</a></li>
+                <li class="list-inline-item"><a class="text-warning" href="about.html">About</a></li>
+                <li class="list-inline-item"><a class="text-warning" href="services.html">Services</a></li>
+                <li class="list-inline-item"><a class="text-warning" href="contact.html">Contact</a></li>
+                <li class="list-inline-item"><a class="text-warning" href="policy.html">Privacy Policy</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
+
