@@ -73,6 +73,43 @@
         .card-body a:hover {
             color: #0056b3; /* Darker shade of primary color */
         }
+        .card-container {
+            perspective: 1000px;
+            margin-bottom: 20px; /* Add margin to separate rows */
+        }
+        .card {
+            width: 100%;
+            height: 300px; /* Set card height to 500px */
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+        
+        .card:hover {
+            transform: rotateY(180deg);
+        }
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .card-front {
+            z-index: 2;
+            transform: rotateY(0deg);
+        }
+        .card-back {
+            transform: rotateY(180deg);
+            padding: 20px;
+            text-align: center;
+        }
         .intro-section {
             padding: 50px 0;
             background-color: #007bff; /* Bootstrap primary color */
@@ -153,4 +190,190 @@
           #linenDetails {
             display: none;
           }
-          
+          .highlight-card:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transform: scale(1.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .highlight-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .highlight-card-container {
+            margin-bottom: 20px;
+        }
+
+        .btn-center {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .testimonial-carousel .carousel-item {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .testimonial-carousel .carousel-item img {
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-carousel .carousel-item h5 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+
+        .testimonial-carousel .carousel-item p {
+            font-size: 1rem;
+            color: #777;
+        }
+        .proud-numbers .card {
+            text-align: center;
+            padding: 20px;
+            border: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .proud-numbers .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .proud-numbers .card-title {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .proud-numbers .card-text {
+            font-size: 1.25rem;
+            color: #777;
+        }
+        .faq-card {
+            border: none;
+            box-shadow: none;
+        }
+
+        .faq-card-header {
+            background-color: #f8f9fa;
+            border: none;
+        }
+        .faq-card-body {
+            border-top: 1px solid #dee2e6;
+        }
+        .contact-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 0;
+        }
+
+        .contact-description {
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        .contact-form {
+            flex: 1;
+            max-width: 500px;
+        }
+        .form-control {
+            border-radius: 50px;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-control::placeholder {
+            color: #aaa;
+        }
+        .btn-submit {
+            width: 100%;
+            border-radius: 50px;
+            padding: 15px 20px;
+        }
+        .calendar-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+        .property-card {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+            background-color: #f8f9fa;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .property-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .property-type {
+            font-size: 1.5rem;
+            color: teal;
+            margin-bottom: 10px;
+        }
+
+        .divider {
+            height: 2px;
+            background-color: #ccc;
+            margin: 10px 0;
+        }
+
+        .flat-price {
+            font-size: 1.25rem;
+            color: blue;
+            margin-bottom: 10px;
+        }
+        .underline {
+            text-decoration: underline;
+            margin-bottom: 10px;
+        }
+
+        .house-price {
+            font-size: 1.25rem;
+            color: orange;
+        }
+        .modal-fullscreen {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .modal-content {
+            height: 100%;
+            border: none;
+            border-radius: 0;
+        }
+
+        .info-card-link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .info-card-link:hover {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .info-card-icon {
+            font-size: 1rem;
+            margin-bottom: 2px;
+        }
+
+        .info-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100px;
+        }
+
+        .info-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        

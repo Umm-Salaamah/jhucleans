@@ -86,48 +86,38 @@
     <!--Pricing Section-->
     <section class="pricing-section">
         <h3>Airbnb Cleaning Price</h3>
-        <table class="pricing-table">
-            <thead>
-                <tr>
-                    <th>Property Type</th>
-                    <th>Flat</th>
-                    <th>House</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Studio flat</td>
-                        <td>xx</td>
-                        <td>xx</td>
-                    </tr>
-                    <tr>
-                        <td>1 bedroom</td>
-                        <td>xx</td>
-                        <td>xx</td>
-                    </tr>
-                    <tr>
-                        <td>2 bedroom 1 bathroom</td>
-                        <td>xx</td>
-                        <td>xx</td>
-                    </tr>
-                    <tr>
-                        <td>2 bedrooms 2 bathrooms</td>
-                        <td>xx</td>
-                        <td>xx</td>
-                    </tr>
-                    <tr>
-                        <td>3 bedrooms 1 bathroom</td>
-                        <td>xx</td>
-                        <td>xx</td>
-                    </tr>
-                    <tr>
-                        <td>3 bedrooms 2 bathrooms</td>
-                        <td>xx</td>
-                        <td>xx</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+        <div class="container">
+          <div class="row">
+              <div class="col-md-4">
+                  <div class="property-card">
+                      <div class="property-type">Apartment</div>
+                      <div class="divider"></div>
+                      <div class="flat-price">Flat Price: $200,000</div>
+                      <div class="underline"></div>
+                      <div class="house-price">House Price: $250,000</div>
+                  </div>
+              </div>
+              <div class="col-md-4">
+                <div class="property-card">
+                    <div class="property-type">Condo</div>
+                    <div class="divider"></div>
+                    <div class="flat-price">Flat Price: $300,000</div>
+                    <div class="underline"></div>
+                    <div class="house-price">House Price: $350,000</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+              <div class="property-card">
+                  <div class="property-type">Villa</div>
+                  <div class="divider"></div>
+                  <div class="flat-price">Flat Price: $500,000</div>
+                  <div class="underline"></div>
+                  <div class="house-price">House Price: $600,000</div>
+              </div>
+          </div>
+      </div>
+  </div>
+     </section>
     <!--Request Form-->
         <form id="cleaningServiceForm">
           <h2>CLEANING SERVICE QUOTE REQUEST FORM</h2>
@@ -464,8 +454,8 @@
 <textarea id="specialRequests" name="specialRequests"></textarea>
 <div class="inputgrp">
     <label>Preferred Date for Service to Begin:</label>
-    <input type="date" id="serviceStartDate" name="serviceStartDate">
-</div>
+    <input type="date" id="serviceDate" name="serviceDate">
+  </div>
 <div class="inputgrp">
     <label>Any ongoing maintenance or repairs needed in the property that should be noted?</label>
     <textarea id="maintenanceNotes" name="maintenanceNotes"></textarea>
@@ -516,53 +506,124 @@
       
     
     <!--FAQs Section-->
+    <!--FAQs-->
     <main class="container mt-5">
-        <section class="faq-section">
-            <h2>Airbnb Frequently Asked Questions</h2>
-            <div class="accordion" id="airbnbFaqAccordion">
-                <div class="card">
-                    <div class="card-header" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Can you clean during the guest’s stay?
-                    </div>
-                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#airbnbFaqAccordion">
-                        <div class="card-body">
-                            <p>Yes, we offer mid-stay cleaning services if requested by the host or guest. This includes refreshing linens, restocking supplies, and tidying up common areas.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        Do you provide toiletries and other consumables?
-                    </div>
-                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#airbnbFaqAccordion">
-                        <div class="card-body">
-                            <p>Yes, we can supply toiletries such as shampoo, soap, and toilet paper if requested. This service can be included in your cleaning package or ordered separately.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header" id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        How do we book your cleaning and linen hire services?
-                    </div>
-                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#airbnbFaqAccordion">
-                        <div class="card-body">
-                            <p>You can book through our website, via email or by calling our customer service team. Please provide the details of your property, dates, and any specific requests, and we will provide a quote and confirm availability. Once booked, you will receive a confirmation email with the details of your appointment.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header" id="headingFour" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                        Can you restock supplies like toiletries, toilet paper, and coffee?
-                    </div>
-                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#airbnbFaqAccordion">
-                        <div class="card-body">
-                            <p>Yes, if you provide the supplies, we can restock them for each guest. If you need us to purchase the supplies, we can do so for an additional fee.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+      <section class="faq-section">
+          <h2>Frequently Asked Questions</h2>
+          <div class="accordion" id="faqAccordion">
+              <div class="faq-card">
+                  <div class="faq-card-header" id="headingOne">
+                      <h5 class="mb-0">
+                          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                              What if my Inventory inspection fails?
+                          </button>
+                      </h5>
+                  </div>
+                  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#faqAccordion">
+                      <div class="faq-card-body">
+                          If we have done an end of tenancy cleaning at your property in London and your inspection inventory fails, then please contact us and we will arrange for our specialist 
+                          cleaners to re-clean the property free of charge.
+                      </div>
+                  </div>
+              </div>
+              <div class="faq-card">
+                  <div class="faq-card-header" id="headingTwo">
+                      <h5 class="mb-0">
+                          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                              What is your cancellation/Rescheduling policy?
+                          </button>
+                      </h5>
+                  </div>
+                  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#faqAccordion">
+                      <div class="faq-card-body">
+                          We require at least 24 hours' notice for any cancellations or changes to cleaning and linen hire services. Late cancellations or failure to provide property access may incur a fee. This ensures we value both your time and that of our cleaners. By accepting our terms and conditions, you agree to the terms of this policy. For full details, please refer to the <a href="#policy-section">cancellation policy</a>.
+                      </div>
+                  </div>
+              </div>
+              <div class="faq-card">
+                  <div class="faq-card-header" id="headingThree">
+                      <h5 class="mb-0">
+                          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                              How do I pay for cleaning?
+                          </button>
+                      </h5>
+                  </div>
+                  <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#faqAccordion">
+                      <div class="faq-card-body">
+                          We accept debit and credit cards only. Payment is made on our website via a secure 3rd party provider. Funds will only be taken from your card once the job has been completed. However, please note that as soon as the booking is confirmed, the estimated amount of the job is pre-authorised on your card to be sure the payment will go through after the cleaning job is completed.
+                      </div>
+                  </div>
+              </div>
+              <div class="faq-card">
+                  <div class="faq-card-header" id="headingFour">
+                      <h5 class="mb-0">
+                          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                              Do you offer discounts for recurring or long-term bookings?
+                          </button>
+                      </h5>
+                  </div>
+                  <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#faqAccordion">
+                      <div class="faq-card-body">
+                          Yes, we offer discounts for regular clients and long-term bookings. If you need ongoing cleaning or linen hire services, please contact us for a tailored package.
+                      </div>
+                  </div>
+              </div>
+              <div class="faq-card">
+                  <div class="faq-card-header" id="headingFive">
+                      <h5 class="mb-0">
+                          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                              Do I get a refund if I am not happy with the service?
+                          </button>
+                      </h5>
+                  </div>
+                  <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#faqAccordion">
+                      <div class="faq-card-body">Our Cleaning Company maintains a no-refund policy. If a client is dissatisfied with the service provided, we ask that any concerns be reported to us within 24 hours of the service’s completion. Upon review and confirmation of the issue, we will promptly address and rectify the problem at no additional cost within 48 hours.
+                      </div>
+                  </div>
+              </div>
+              <div class="faq-card">
+                  <div class="faq-card-header" id="headingSix">
+                      <h5 class="mb-0">
+                          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                              Can I set up recurring cleanings?
+                          </button>
+                      </h5>
+                  </div>
+                  <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#faqAccordion">
+                      <div class="faq-card-body">Absolutely! We can set up recurring cleanings based on your rental schedule, whether it's daily, weekly, or after every guest's stay.
+                      </div>
+                  </div>
+              </div>
+              <div class="faq-card">
+                  <div class="faq-card-header" id="headingSeven">
+                      <h5 class="mb-0">
+                          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">Do I need to be present during the cleaning?
+                          </button>
+                      </h5>
+                  </div>
+                  <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#faqAccordion">
+                      <div class="faq-card-body">
+                          No, you don't need to be present. As long as we have access to the property, our team can clean while you're away. We can coordinate with you or your guests regarding keys or lockbox codes.
+                      </div>
+                  </div>
+              </div>
+              <div class="faq-card">
+                  <div class="faq-card-header" id="headingEight">
+                      <h5 class="mb-0">
+                          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                              How long can we hire linens and duvets for?
+                          </button>
+                      </h5>
+                  </div>
+                  <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#faqAccordion">
+                      <div class="faq-card-body">
+                          Our linen hire service is available for a maximum of 10 days.
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+      </main>
     <!--Footer Section-->
     <footer class="bg-primary text-warning text-center py-3">
         <div class="container">
@@ -649,11 +710,12 @@ function changeValue(id, delta) {
   });
 });
 
-    </script>
+</script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </body>
 </html>
 
