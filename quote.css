@@ -1,0 +1,52 @@
+.form-container {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 600px;
+}
+.form-container h2 {
+  color: #008080;
+  margin-bottom: 20px;
+}
+.form-container label {
+  font-weight: bold;
+}
+.form-container .btn {
+  background-color: #008080;
+  color: white;
+}
+.form-container .btn:hover {
+  background-color: #005f5f;
+}
+.counter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.counter label {
+  flex: 1;
+}
+.counter-controls {
+  display: flex;
+  align-items: center;
+}
+.counter button {
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  margin: 0 5px;
+}
+.counter input {
+  width: 50px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+}

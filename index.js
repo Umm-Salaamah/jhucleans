@@ -69,3 +69,45 @@ function changeValue(id, delta) {
     });
   });
 });
+
+    const prices = {
+        singleBeds: 18,
+        doubleBeds: 19,
+        kingBeds: 20,
+        superKingBeds: 22,
+        duvetSingle: 7,
+        duvetDouble: 7,
+        duvetKing: 7,
+        duvetSuperKing: 7,
+        pillows: 5,
+        pillowProtector: 3,
+        mattressSingle: 7,
+        mattressDouble: 7,
+        mattressKing: 8,
+        mattressSuperKing: 8,
+        blankets: 5,
+        kitchenTowels: 1,
+        bathMats: 2,
+        bathrobeSlippers: 7
+    };
+
+    function changeValue(id, delta) {
+        const input = document.getElementById(id);
+        let value = parseInt(input.value, 10);
+        value = isNaN(value) ? 0 : value;
+        value += delta;
+        if (value < 0) value = 0;
+        input.value = value;
+        calculateTotal();
+    }
+
+    function calculateTotal() {
+        let total = 0;
+        for (const id in prices) {
+            const input = document.getElementById(id);
+            if (input) {
+                total += (parseInt(input.value, 10) || 0) * prices[id];
+            }
+        }
+        document.getElementById('totalCost').innerText = total.toFixed(2);
+    }

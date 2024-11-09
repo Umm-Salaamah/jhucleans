@@ -10,56 +10,118 @@
 <body>
     <!--Header-->
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-            <a class="navbar-brand text-warning" href="#">Logo</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link text-warning" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-warning" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-warning" href="services.html" id="servicesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Services
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="servicesDropdown">
-                            <a class="dropdown-item" href="airbnb.html">Airbnb</a>
-                            <a class="dropdown-item" href="deepclean.html">Deep Clean</a>
-                            <a class="dropdown-item" href="linenhire.html">Linen Hire</a>
-                            <a class="dropdown-item" href="midstay.html">Midstay Shortlet Clean</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item dropdown-toggle" href="#" id="airbnbDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Airbnb
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="airbnbDropdown">
-                                <a class="dropdown-item" href="linenair.html">Linen Hire</a>
-                                <a class="dropdown-item" href="midstayair.html">Midstay Shortlet Clean</a>
+      <nav class="navbar navbar-expand-lg">
+          <a class="navbar-brand" href="#">Logo</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                  <li class="nav-item">
+                      <a class="nav-link" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="about.html">About</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="services.html" id="servicesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Services
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="servicesDropdown">
+                          <a class="dropdown-item" href="airbnb.html">Airbnb</a>
+                          <a class="dropdown-item" href="deepclean.html">Deep Clean</a>
+                          <a class="dropdown-item" href="linenhire.html">Linen Hire</a>
+                          <a class="dropdown-item" href="midstay.html">Midstay Shortlet Clean</a>         
+                      </div>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="register.html">Signin/Login</a>
+                  </li>
+              </ul>
+          </div>
+      </nav>
+  </header>
+    <!--Main Section-->
+    <main class="container-fluid">
+        <div class="main-section row no-gutters">
+            <div class="col-md-6">
+                <img src="https://media.istockphoto.com/id/1570318885/photo/the-concept-of-cleaning-services-for-premises.webp?a=1&b=1&s=612x612&w=0&k=20&c=H9nLhkdiz72II3HH48VXRWALe4IHhIQxaMpj12hWqPs=" alt="Cleaning Service" class="img-fluid img-100vh">
+            </div>
+            <div class="col-md-6 d-flex align-items-center">
+                <div class="content p-4">
+                    <h1>Who we are</h1>
+                    <p>We’re a dedicated and professional cleaning service committed to making your spaces shine. With years of experience serving both residential and commercial clients, our team of trained, trustworthy cleaners delivers top-notch service tailored to your needs.</p>
+                    <!--Request a Quote-->
+                    <button type="submit" class="btn btn-primary">Request a Quote</button>
+                
+                    <!-- Modal -->
+                    <div class="modal fade" id="cardsModal" tabindex="-1" aria-labelledby="cardsModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header modal-header-custom">
+                                    <h5 class="modal-title" id="cardsModalLabel">Request a Quote</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="card-custom">
+                                                    <div class="card-header card-header-custom">Airbnb</div>
+                                                    <div class="card-body card-body-custom">
+                                                        <p>Services often include cleaning and maintenance to prepare properties between guest stays.</p>
+                                                    </div>
+                                                    <a href="airbnbquotehtml" class="card-footer-custom">Airbnb Request Form</a>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class=" card-custom">
+                                                    <div class="card-header card-header-custom">Linen Hire</div>
+                                                    <div class="card-body card-body-custom">
+                                                        <p>Offers rental services for bed linens, towels, and other textile items, typically for hospitality businesses or short-term rentals. </p>
+                                                    </div>
+                                                    <a href="linenhirequote.html" class="card-footer-custom">Linen Hire Request Form</a>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="card-custom">
+                                                    <div class="card-header card-header-custom">End of tenancy</div>
+                                                    <div class="card-body card-body-custom">
+                                                        <p>Includes deep cleaning tasks like carpet shampooing, appliance cleaning, and wall washing.</p>
+                                                    </div>
+                                                    <a href="eotquote.html" class="card-footer-custom">End of tenancy Request form</a>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="card-custom">
+                                                    <div class="card-header card-header-custom">Midstay Shorlet Clean</div>
+                                                    <div class="card-body card-body-custom">
+                                                        <p>This typically includes dusting, vacuuming, and refreshing linens, but may vary based on guest needs and stay duration.</p>
+                                                    </div>
+                                                    <a href="midstatquote.html" class=" card-footer-custom">Midstay Request Form</a>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class=" card-custom">
+                                                    <div class="card-header card-header-custom">Deep Cleaning</div>
+                                                    <div class="card-body card-body-custom">
+                                                        <p>An intensive cleaning service that goes beyond routine cleaning, focusing on hard-to-reach areas, stubborn stains, and buildup.</p>
+                                                    </div>
+                                                    <a href="deepcleanquote.html" class="card-footer-custom">Deep cleaning request form</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer modal-footer-custom">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
                             </div>
                         </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-warning" href="register.html">Signin/Login</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-    <!--Main Section-->
-    <main class="container mt-5">
-        <div class="main-section row align-items-center">
-            <div class="col-md-6">
-                <img src="your-image-url.jpg" alt="Cleaning Service">
-            </div>
-            <div class="col-md-6 content">
-                <h1>Welcome to Jhu Cleans</h1>
-                <h2>Your Trusted Cleaning Partner</h2>
-                <p>Experience the best cleaning services tailored to your needs. From end-of-tenancy cleaning to Airbnb turnover services, we ensure your space is spotless and welcoming.</p>
-                <a href="#" class="btn btn-primary">Get Started</a>
+                    </div>                    
+                </div>
             </div>
         </div>
     </main>
@@ -67,25 +129,56 @@
     <main class="container mt-5">
         <h1>About Us</h1>
         <p>At Jhu Cleans, we’ve earned a stellar reputation for providing outstanding cleaning services tailored to meet a diverse range of needs. Whether you're looking for end-of-tenancy cleaning, Airbnb turnover services, or mid-stay refreshes, our dedicated team delivers meticulous care and attention to detail, ensuring your space is pristine every time.</p>
-        <p>We take pride in our commitment to exceed expectations, offering top-notch service at competitive rates with no hidden costs. Our goal is to leave your property spotless and welcoming, every time.</p>
-        <p>But we don’t stop at cleaning. We understand the importance of a well-prepared space for your guests. That’s why we offer an array of additional services, including linen hire, consumable replacements, and curated toiletries. From shower gels and shampoos to paper towels and coffee, we ensure every detail is taken care of allowing your guests to feel pampered and at home from the moment they arrive.</p>
-        <p>To enhance your guest experience even further, we offer bespoke welcome packs. Choose from basic essentials to luxurious hampers with quality food and fresh flowers, tailored to make every stay memorable.</p>
-        <p>Choose Jhu Cleans for a comprehensive, hassle-free service that goes above and beyond, ensuring every detail is perfect.</p>
+
+            <p>We take pride in our commitment to exceed expectations, offering top-notch service at competitive rates with no hidden costs. Our goal is to leave your property spotless and welcoming, every time.</p>
+            
+            <p>But we don’t stop at cleaning. We understand the importance of a well-prepared space for your guests. That’s why we offer an array of additional services, including linen hire, consumable replacements, and curated toiletries. From shower gels and shampoos to paper towels and coffee, we ensure every detail is taken care of allowing your guests to feel pampered and at home from the moment they arrive.</p>
+            
+            <p>To enhance your guest experience even further, we offer bespoke welcome packs. Choose from basic essentials to luxurious hampers with quality food and fresh flowers, tailored to make every stay memorable.</p>
+            
+            <p>Choose Jhu Cleans for a comprehensive, hassle-free service that goes above and beyond, ensuring every detail is perfect.</p>
     </main>
     <!--Footer Section-->
-    <footer class="bg-primary text-warning text-center py-3">
+    <footer class="footer">
         <div class="container">
-            <p>About Us: We provide top-notch cleaning services tailored to your needs.</p>
-            <ul class="list-inline">
-                <li class="list-inline-item"><a class="text-warning" href="index.html">Home</a></li>
-                <li class="list-inline-item"><a class="text-warning" href="about.html">About</a></li>
-                <li class="list-inline-item"><a class="text-warning" href="services.html">Services</a></li>
-                <li class="list-inline-item"><a class="text-warning" href="contact.html">Contact</a></li>
-                <li class="list-inline-item"><a class="text-warning" href="policy.html">Privacy Policy</a></li>
-            </ul>
+            <div class="row">
+                <!-- About Section -->
+                <div class="col-md-4">
+                    <h5>About Us</h5>
+                    <p>We provide top-notch cleaning services tailored to your needs. Our team is dedicated to ensuring your space is spotless and welcoming.</p>
+                </div>
+                <!-- Links Section -->
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="register.html">Register</a></li>
+                    </ul>
+                </div>
+                <!-- Contact Section -->
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <ul class="list-unstyled">
+                        <li>Email: info@jhucleans.com</li>
+                        <li>Phone: +123 456 7890</li>
+                        <li>Address: 123 Clean St, Clean City, CL 12345</li>
+                    </ul>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col text-center">
+                    <p>© 2024 Jhu Cleans. All rights reserved.</p>
+                </div>
+            </div>
         </div>
     </footer>
-
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

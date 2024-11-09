@@ -1,379 +1,323 @@
+.card-header {
+    background-color: teal;
+    color: white;
+}
+.card-body {
+    border-top: 2px solid orange;
+}
+.card-footer {
+    background-color: orange;
+    color: white;
+    border-top: 2px solid teal;
+}
+.center-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.container-fluid{
+    left: 0;
+    right: 0;
+    min-width: 100%;
+}
+
+.btn-custom {
+    background-color: teal;
+    color: white;
+    border: 2px solid orange;
+}
+.btn-custom:hover {
+    background-color: orange;
+    color: teal;
+    border: 2px solid teal;
+}
+/*Linen Hire*/
+.navbar {
+    background-color: teal;
+}
+.navbar-brand, .nav-link {
+    color: orange !important;
+}
+.navbar-toggler-icon {
+    background-color: orange;
+}
 .main-section {
-    padding: 50px 0;
+    margin-top: 50px;
 }
-.main-section img {
-    max-width: 100%;
-    height: auto;
+.btn-primary {
+    background-color: teal;
+    border-color: orange;
 }
-.main-section .content {
-    padding-left: 30px;
+.btn-primary:hover {
+    background-color: orange;
+    border-color: teal;
+    color: teal;
 }
-.main-section h1 {
-    color: #007bff; /* Bootstrap primary color */
+/*.main-section {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+}*/
+.btn-primary {
+    background-color: teal;
+    border-color: orange;
 }
-.main-section h2 {
-    color: #333;
+.btn-primary:hover {
+    background-color: orange;
+    border-color: teal;
+    color: teal;
 }
-.main-section .btn-primary {
-    background-color: #ffc107; /* Bootstrap warning color */
-    border-color: #ffc107; /* Bootstrap warning color */
+.img-100vh {
+    height: 70vh;
+    object-fit: cover;
+    width: 100%;
+    border: 5px solid teal;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-.main-section .btn-primary:hover {
-    background-color: #e0a800; /* Darker shade of warning color */
-    border-color: #d39e00; /* Darker shade of warning color */
+.footer {
+    background-color: teal;
+    color: white;
+    padding: 20px 0;
+}
+.footer a {
+    color: orange;
+}
+.footer a:hover {
+    color: white;
+}
+.footer .social-icons a {
+    margin: 0 10px;
+    color: orange;
+}
+.footer .social-icons a:hover {
+    color: white;
+}
+.navbar {
+    background-color: teal;
+}
+.navbar-brand, .nav-link {
+    color: orange !important;
+}
+.navbar-toggler-icon {
+    background-color: orange;
+}
+.btn-link{
+    border-bottom: 2px teal solid;
+    width: 100%;
+    color: black;
+}
+.contact-description{
+    margin-top: 15px;
+}
+.main-section {
+    margin-top: 50px;
+}
+.btn-primary {
+    background-color: teal;
+    border-color: orange;
+}
+.btn-primary:hover {
+    background-color: orange;
+    border-color: teal;
+    color: teal;
+}
+.carousel-item {
+    text-align: center;
+    color: white;
+}
+.carousel-item p {
+    font-size: 1.2em;
+}
+.carousel-item h5 {
+    color: orange;
+}
+.carousel-inner {
+    background-color: teal;
+    padding: 30px;
+}
+.img-100vh {
+    height: 70vh;
+    object-fit: cover;
+    width: 100%;
+    border: 5px solid teal;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-custom {
+    background-color: teal;
+    color: white;
+    border: 2px solid orange;
+}
+.btn-custom:hover {
+    background-color: orange;
+    color: teal;
+    border: 2px solid teal;
+}
+.card-custom {
+    border: 2px solid teal;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+}
+.card-header-custom {
+    background-color: teal;
+    color: white;
+}
+.card-body-custom {
+    background-color: white;
+    color: black;
+}
+.card-footer-custom {
+    background-color: orange;
+    color: white;
+    border-radius: 16px;
+    padding: 5px 10px;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+}
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 128, 128, 0.7); /* Teal with transparency */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.modal-header-custom {
+    background-color: teal;
+    color: white;
+}
+.modal-footer-custom {
+    background-color: orange;
+    color: white;
 }
 .services-section {
-    padding: 50px 0;
-        }
-.services-section h2 {
-    color: #007bff; /* Bootstrap primary color */
     text-align: center;
-    margin-bottom: 40px;
-    }
+}
+.card-container {
+    perspective: 1000px;
+}
 .card {
-    margin-bottom: 30px;
-        }
-.card img {
-            max-width: 100%;
-            height: auto;
-        }
-.card-title {
-            color: #007bff; /* Bootstrap primary color */
-        }
-.card-text {
-            color: #333;
-        }
+    position: relative;
+    width: 100%;
+    height: 300px;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+.card:hover {
+    transform: rotateY(180deg);
+}
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.card-front {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+}
+.card-1{
+    background: url('https://plus.unsplash.com/premium_photo-1684338795288-097525d127f0?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center;
+    background-size: cover;
+}
+.card-2{
+    background: url('https://images.unsplash.com/photo-1556037843-347ddff9f4b0?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center;
+    background-size: cover;
+
+}
+.card-3{
+    background: url('https://images.unsplash.com/photo-1559051668-9024c9b5e84b?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center;
+    background-size: cover;
+}
+.card-4{
+    background: url('https://plus.unsplash.com/premium_photo-1678304224644-c74093694beb?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center;
+    background-size: cover;
+}
+.card-5{  
+    background: url('https://plus.unsplash.com/premium_photo-1677234146765-af7c30e44a3e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZW5kJTIwb2YlMjB0ZW5hbmN5JTIwY2xlYW5pbmd8ZW58MHx8MHx8fDA%3D') no-repeat center center;
+    background-size: cover;
+}
+.card-back {
+    background-color: white;
+    color: black;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
 .btn-primary {
-            background-color: #ffc107; /* Bootstrap warning color */
-            border-color: #ffc107; /* Bootstrap warning color */
-        }
+    background-color: teal;
+    border-color: orange;
+}
 .btn-primary:hover {
-            background-color: #e0a800; /* Darker shade of warning color */
-            border-color: #d39e00; /* Darker shade of warning color */
-        }
-        .faq-section {
-            padding: 50px 0;
-        }
-        .faq-section h2 {
-            color: #007bff; /* Bootstrap primary color */
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        .card-header {
-            background-color: #007bff; /* Bootstrap primary color */
-            color: #fff;
-        }
-        .card-body {
-            color: #333;
-        }
-        .card-body a {
-            color: #007bff;
-            text-decoration: underline;
-        }
-        .card-body a:hover {
-            color: #0056b3; /* Darker shade of primary color */
-        }
-        .card-container {
-            perspective: 1000px;
-            margin-bottom: 20px; /* Add margin to separate rows */
-        }
-        .card {
-            width: 100%;
-            height: 300px; /* Set card height to 500px */
-            position: relative;
-            transform-style: preserve-3d;
-            transition: transform 0.6s;
-        }
-        
-        .card:hover {
-            transform: rotateY(180deg);
-        }
-        .card-front, .card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            background-color: #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .card-front {
-            z-index: 2;
-            transform: rotateY(0deg);
-        }
-        .card-back {
-            transform: rotateY(180deg);
-            padding: 20px;
-            text-align: center;
-        }
-        .intro-section {
-            padding: 50px 0;
-            background-color: #007bff; /* Bootstrap primary color */
-            color: #ffc107; /* Bootstrap warning color */
-        }
-        .tasks-section, .pricing-section {
-            padding: 50px 0;
-        }
-        .tasks-section h3, .pricing-section h3 {
-            color: #007bff; /* Bootstrap primary color */
-        }
-        .tasks-section ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        .tasks-section ul li {
-            background: #ffc107; /* Bootstrap warning color */
-            color: #007bff; /* Bootstrap primary color */
-            margin: 10px 0;
-            padding: 10px;
-            border-radius: 5px;
-        }
-        .pricing-table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        .pricing-table th, .pricing-table td {
-            border: 1px solid #007bff; /* Bootstrap primary color */
-            padding: 10px;
-            text-align: center;
-        }
-        .pricing-table th {
-            background-color: #007bff; /* Bootstrap primary color */
-            color: #ffc107; /* Bootstrap warning color */
-        }
-        .pricing-table td {
-            background-color: #ffc107; /* Bootstrap warning color */
-            color: #007bff; /* Bootstrap primary color */
-        }
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-          }
-          
-          
-          form {
-            max-width: 90%;
-            margin: auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            background-color: #f8f9fa; /* Bootstrap's light background color */
-          }
-          
-          .inputgrp {
-            display: block;
-            margin-top: 10px;
-          }
-          
-          input[type="text"],
-          input[type="number"],
-          input[type="date"],
-          textarea {
-            padding: 8px;
-            margin-top: 5px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-          }
-          
-          button {
-            padding: 5px 10px;
-            margin: 5px;
-          }
-          
-          #bedroomsBathrooms,
-          #midStayFrequency,
-          #linenDetails {
-            display: none;
-          }
-          .highlight-card:hover {
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transform: scale(1.05);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
+    background-color: orange;
+    border-color: teal;
+    color: teal;
+}
+.footer {
+    background-color: teal;
+    color: white;
+    padding: 20px 0;
+}
+.footer a {
+    color: orange;
+}
+.footer a:hover {
+    color: white;
+}
+.footer .social-icons a {
+    margin: 0 10px;
+    color: orange;
+}
+.footer .social-icons a:hover {
+    color: white;
+}
+.tasks-section {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-        .highlight-card {
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
+.tasks-section h3 {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
 
-        .highlight-card-container {
-            margin-bottom: 20px;
-        }
+.tasks-section ul {
+    list-style-type: none;
+    padding: 0;
+}
 
-        .btn-center {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-        .testimonial-carousel .carousel-item {
-            text-align: center;
-            padding: 30px;
-        }
+.tasks-section li {
+    font-family: 'Arial', sans-serif;
+    color: #555;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
 
-        .testimonial-carousel .carousel-item img {
-            border-radius: 50%;
-            margin-bottom: 20px;
-        }
-
-        .testimonial-carousel .carousel-item h5 {
-            font-size: 1.25rem;
-            margin-bottom: 10px;
-        }
-
-        .testimonial-carousel .carousel-item p {
-            font-size: 1rem;
-            color: #777;
-        }
-        .proud-numbers .card {
-            text-align: center;
-            padding: 20px;
-            border: none;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .proud-numbers .card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-        .proud-numbers .card-title {
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-
-        .proud-numbers .card-text {
-            font-size: 1.25rem;
-            color: #777;
-        }
-        .faq-card {
-            border: none;
-            box-shadow: none;
-        }
-
-        .faq-card-header {
-            background-color: #f8f9fa;
-            border: none;
-        }
-        .faq-card-body {
-            border-top: 1px solid #dee2e6;
-        }
-        .contact-section {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            padding: 40px 0;
-        }
-
-        .contact-description {
-            flex: 1;
-            padding-right: 20px;
-        }
-
-        .contact-form {
-            flex: 1;
-            max-width: 500px;
-        }
-        .form-control {
-            border-radius: 50px;
-            padding: 15px 20px;
-            margin-bottom: 20px;
-        }
-
-        .form-control::placeholder {
-            color: #aaa;
-        }
-        .btn-submit {
-            width: 100%;
-            border-radius: 50px;
-            padding: 15px 20px;
-        }
-        .calendar-container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 0;
-        }
-        .property-card {
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 20px;
-            text-align: center;
-            background-color: #f8f9fa;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .property-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-
-        .property-type {
-            font-size: 1.5rem;
-            color: teal;
-            margin-bottom: 10px;
-        }
-
-        .divider {
-            height: 2px;
-            background-color: #ccc;
-            margin: 10px 0;
-        }
-
-        .flat-price {
-            font-size: 1.25rem;
-            color: blue;
-            margin-bottom: 10px;
-        }
-        .underline {
-            text-decoration: underline;
-            margin-bottom: 10px;
-        }
-
-        .house-price {
-            font-size: 1.25rem;
-            color: orange;
-        }
-        .modal-fullscreen {
-            width: 100%;
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-        }
-
-        .modal-content {
-            height: 100%;
-            border: none;
-            border-radius: 0;
-        }
-
-        .info-card-link {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .info-card-link:hover {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .info-card-icon {
-            font-size: 1rem;
-            margin-bottom: 2px;
-        }
-
-        .info-card {
-            transition: transform 0.3s, box-shadow 0.3s;
-            height: 100px;
-        }
-
-        .info-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-        
+.tasks-section li:last-child {
+    border-bottom: none;
+}
