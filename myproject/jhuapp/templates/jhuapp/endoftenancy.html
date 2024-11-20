@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cleaning Service</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!--Header-->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+            <a class="navbar-brand text-warning" href="#">Logo</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-warning" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-warning" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-warning" href="services.html" id="servicesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Services
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="servicesDropdown">
+                            <a class="dropdown-item" href="airbnb.html">Airbnb</a>
+                            <a class="dropdown-item" href="deepclean.html">Deep Clean</a>
+                            <a class="dropdown-item" href="linenhire.html">Linen Hire</a>
+                            <a class="dropdown-item" href="midstay.html">Midstay Shortlet Clean</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item dropdown-toggle" href="#" id="airbnbDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Airbnb
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="airbnbDropdown">
+                                <a class="dropdown-item" href="linenair.html">Linen Hire</a>
+                                <a class="dropdown-item" href="midstayair.html">Midstay Shortlet Clean</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-warning" href="register.html">Signin/Login</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!--Main Section-->
+    <main class="container mt-5">
+        <div class="main-section row align-items-center">
+            <div class="col-md-6">
+                <img src="your-image-url.jpg" alt="Cleaning Service">
+            </div>
+            <div class="col-md-6 content">
+                <h1>Welcome to Jhu Cleans</h1>
+                <h2>Your Trusted Cleaning Partner</h2>
+                <p>Experience the best cleaning services tailored to your needs. From end-of-tenancy cleaning to Airbnb turnover services, we ensure your space is spotless and welcoming.</p>
+                <a href="#" class="btn btn-primary">Get Started</a>
+            </div>
+        </div>
+    </main>
+    <!-- Property Address Section -->
+    <h2 class="text-center text-primary">Request Form</h2>
+<form id="cleaningServiceForm">
+    <div class="d-block">
+        <label class="font-weight-bold" for="propertyAddress">Property Address (Street, City, Postal Code):</label>
+        <input type="text" id="propertyAddress" name="propertyAddress" required pattern=".*London.*">
+    </div>
+
+
+<!-- Type of Cleaning Required Section -->
+<label class="font-weight-bold">Type of Cleaning Required:</label>
+<div>
+  <input type="radio" id="checkInOut" name="cleaningType" value="Check-in/Check-out Cleaning">
+  <label for="checkInOut">Check-in/Check-out Cleaning</label>
+</div>
+<div>
+  <input type="radio" id="midStay" name="cleaningType" value="Mid-Stay Cleaning">
+  <label for="midStay">Mid-Stay Cleaning</label>
+</div>
+<div>
+  <input type="radio" id="endOfTenancy" name="cleaningType" value="End-of-Tenancy Deep Clean">
+  <label for="endOfTenancy">End-of-Tenancy Deep Clean</label>
+</div>
+
+<!-- Type of Property Section -->
+<label class="font-weight-bold">Type of Property:</label>
+<div>
+  <input type="radio" id="flat" name="propertyType" value="Flat">
+  <label for="flat">Flat</label>
+</div>
+<div>
+  <input type="radio" id="house" name="propertyType" value="House">
+  <label for="house">House</label>
+</div>
+
+<!-- Number of Bedrooms and Bathrooms Section -->
+<label class="font-weight-bold">Number of Bedrooms:</label>
+<button type="button" onclick="changeValue('bedrooms', -1)">-</button>
+<input type="number" id="bedrooms" name="bedrooms" value="0" min="0">
+<button type="button" onclick="changeValue('bedrooms', 1)">+</button>
+
+<label class="font-weight-bold">Number of Bathrooms:</label>
+<button type="button" onclick="changeValue('bathrooms', -1)">-</button>
+<input type="number" id="bathrooms" name="bathrooms" value="0" min="0">
+<button type="button" onclick="changeValue('bathrooms', 1)">+</button>
+
+<!-- Upholstery Cleaning Section -->
+<label class="font-weight-bold">Do you need any upholstery cleaning?</label>
+<div>
+  <input type="radio" id="upholsteryYes" name="upholsteryCleaning" value="Yes">
+  <label for="upholsteryYes">Yes</label>
+</div>
+<div>
+  <input type="radio" id="upholsteryNo" name="upholsteryCleaning" value="No">
+  <label for="upholsteryNo">No</label>
+</div>
+
+<div id="upholsteryDetails">
+  <label class="font-weight-bold">Which of these require a deep clean?</label>
+  <div>
+    <label>Single mattress</label>
+    <button type="button" onclick="changeValue('singleMattress', -1)">-</button>
+    <input type="number" id="singleMattress" name="singleMattress" value="0" min="0">
+    <button type="button" onclick="changeValue('singleMattress', 1)">+</button>
+  </div>
+  <div>
+    <label>Double mattress</label>
+    <button type="button" onclick="changeValue('doubleMattress', -1)">-</button>
+    <input type="number" id="doubleMattress" name="doubleMattress" value="0" min="0">
+    <button type="button" onclick="changeValue('doubleMattress', 1)">+</button>
+  </div>
+  <div>
+    <label>King size mattress</label>
+    <button type="button" onclick="changeValue('kingMattress', -1)">-</button>
+    <input type="number" id="kingMattress" name="kingMattress" value="0" min="0">
+    <button type="button" onclick="changeValue('kingMattress', 1)">+</button>
+  </div>
+  <!-- Add similar sections for other upholstery items -->
+</div>
+
+<!-- Additional Rooms and Appliances Section -->
+<label class="font-weight-bold">Are there any additional rooms and appliances which require cleaning?</label>
+<div>
+  <label>Study</label>
+  <button type="button" onclick="changeValue('study', -1)">-</button>
+  <input type="number" id="study" name="study" value="0" min="0">
+  <button type="button" onclick="changeValue('study', 1)">+</button>
+</div>
+<div>
+  <label>Extra oven</label>
+  <button type="button" onclick="changeValue('extraOven', -1)">-</button>
+  <input type="number" id="extraOven" name="extraOven" value="0" min="0">
+  <button type="button" onclick="changeValue('extraOven', 1)">+</button>
+</div>
+<!-- Add similar sections for other additional rooms and appliances -->
+
+<!-- Carpet Cleaning Section -->
+<label class="font-weight-bold">What kind of carpet cleaning do you need?</label>
+<div>
+  <input type="radio" id="vacuumingOnly" name="carpetCleaning" value="Vacuuming only">
+  <label for="vacuumingOnly">Vacuuming only</label>
+</div>
+<div>
+  <input type="radio" id="deepCleaning" name="carpetCleaning" value="Deep cleaning">
+  <label for="deepCleaning">Deep cleaning</label>
+</div>
+<div>
+  <input type="radio" id="noCarpets" name="carpetCleaning" value="No carpets">
+  <label for="noCarpets">No carpets</label>
+</div>
+
+<div id="carpetDetails">
+  <label class="font-weight-bold">What rooms require a carpet deep clean?</label>
+  <div>
+    <label>Bedroom</label>
+    <button type="button" onclick="changeValue('bedroomCarpet', -1)">-</button>
+    <input type="number" id="bedroomCarpet" name="bedroomCarpet" value="0" min="0">
+    <button type="button" onclick="changeValue('bedroomCarpet', 1)">+</button>
+  </div>
+  <div>
+    <label>Living room</label>
+    <button type="button" onclick="changeValue('livingRoomCarpet', -1)">-</button>
+    <input type="number" id="livingRoomCarpet" name="livingRoomCarpet" value="0" min="0">
+    <button type="button" onclick="changeValue('livingRoomCarpet', 1)">+</button>
+  </div>
+  <!-- Add similar sections for other rooms -->
+</div>
+
+<!-- Access Details Section -->
+<label class="font-weight-bold">How can the operative access the building?</label>
+<div>
+  <input type="radio" id="accessAtProperty" name="accessMethod" value="I will be at the property">
+  <label for="accessAtProperty">I will be at the property</label>
+</div>
+<div>
+  <input type="radio" id="accessConcierge" name="accessMethod" value="Through a concierge">
+  <label for="accessConcierge">Through a concierge</label>
+</div>
+<div>
+  <input type="radio" id="accessKeySafe" name="accessMethod" value="Key safe">
+  <label for="accessKeySafe">Key safe</label>
+</div>
+<div>
+  <input type="radio" id="accessHiddenKey" name="accessMethod" value="Hidden key">
+  <label for="accessHiddenKey">Hidden key</label>
+</div>
+<div>
+  <input type="radio" id="accessEstateAgent" name="accessMethod" value="Using Keys collected from the local estate agent">
+  <label for="accessEstateAgent">Using Keys collected from the local estate agent</label>
+</div>
+
+<label class="font-weight-bold">Do you have any special cleaning requests or instructions?</label>
+<textarea class="d-block w-100"  id="specialRequests" name="specialRequests"></textarea>
+
+<label class="font-weight-bold d-block">Preferred Date:</label>
+<input class="d-block" type="date" id="preferredDate" name="preferredDate">
+
+<label class="font-weight-bold">Any ongoing maintenance or repairs needed in the property that should be noted?</label>
+<textarea class="d-block w-100" id="maintenanceNotes" name="maintenanceNotes"></textarea>
+
+<!-- Contact Information Section -->
+<label class="font-weight-bold">Contact Information</label>
+<div>
+  <label for="contactName" class="font-weight-bold">Name:</label>
+  <input type="text" id="contactName" name="contactName" required>
+</div>
+<div>
+  <label for="contactPhone" class="font-weight-bold">Phone Number:</label>
+  <input type="tel" id="contactPhone" name="contactPhone" required>
+</div>
+<div>
+  <label for="contactEmail" class="font-weight-bold">Email Address:</label>
+  <input type="email" id="contactEmail" name="contactEmail" required>
+</div>
+
+<label class="font-weight-bold">How did you hear about us?</label>
+<div>
+  <input type="radio" id="googleSearch" name="referralSource" value="Google Search">
+  <label for="googleSearch">Google Search</label>
+</div>
+<div>
+  <input type="radio" id="referral" name="referralSource" value="Referral">
+  <label for="referral">Referral</label>
+</div>
+<div>
+  <input type="radio" id="socialMedia" name="referralSource" value="Social Media">
+  <label for="socialMedia">Social Media</label>
+</div>
+<div>
+    <input type="radio" id="otherSource" name="referralSource" value="Other">
+    <label for="otherSource">Other:</label>
+    <input type="text" id="otherReferralSource" name="otherReferralSource">
+</div>
+<button type="submit">Submit</button>
+
+</form>
+  <!--FAQs-->
+    <main class="container mt-5">
+        <section class="faq-section">
+            <h2>End of Tenancy Frequently Asked Questions</h2>
+            <div class="accordion" id="endOfTenancyFaqAccordion">
+                <div class="card">
+                    <div class="card-header" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Do you clean walls and get rid of wall marks?
+                    </div>
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#endOfTenancyFaqAccordion">
+                        <div class="card-body">
+                            <p>No, we cannot clean walls and get rid of marks. This is best done prior to our end of tenancy cleaning service commencing.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Do I need to be present during the cleaning?
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#endOfTenancyFaqAccordion">
+                        <div class="card-body">
+                            <p>No, you don't need to be present. As long as we have access to the property (key, entry code, etc.), we can complete the cleaning while you're away. We will notify you once the cleaning is done.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        What happens if my landlord is not satisfied with the cleaning?
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#endOfTenancyFaqAccordion">
+                        <div class="card-body">
+                            <p>We offer a satisfaction guarantee. If your landlord or letting agent raises any issues within 24-48 hours of the cleaning, we will return to the property and re-clean the areas in question at no extra charge.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingFour" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        What happens if damages are found during the cleaning?
+                    </div>
+                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#endOfTenancyFaqAccordion">
+                        <div class="card-body">
+                            <p>If we discover any damages during the cleaning process, we will notify you immediately. However, we are not responsible for pre-existing damages caused by tenants
+                                or previous cleaners.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingFive" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        Can you assist with inventory checks at the end of the tenancy?
+                    </div>
+                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#endOfTenancyFaqAccordion">
+                        <div class="card-body">
+                            <p>We can assist with basic inventory checks (cleaning-related), such as noting if any items need replacing (light bulbs, batteries, etc.). However, for formal inventory services, it’s best to use a specialist inventory company.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingSix" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                        Do I have to defrost my fridge and freezer in advance of the deep clean?
+                    </div>
+                    <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#endOfTenancyFaqAccordion">
+                        <div class="card-body">
+                            <p>Please ensure your fridge and/or freezer is defrosted at least 24 hours before the deep cleaning service. This allows our team to thoroughly clean the appliance, as we are unable to clean it while it is still frozen.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingSeven" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                        Are kitchen appliances included in the end of tenancy cleaning?
+                    </div>
+                    <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#endOfTenancyFaqAccordion">
+                        <div class="card-body">
+                            <p>Yes, absolutely! A thorough end of tenancy clean wouldn’t be complete without cleaning the kitchen appliances. As part of our standard service, we clean one of each of the following: oven, fridge/freezer, dishwasher, microwave, and washing machine.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingEight" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                        Can you pick up keys from my local estate agents?
+                    </div>
+                    <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#endOfTenancyFaqAccordion">
+                        <div class="card-body">
+                            <p>Yes, we can collect and return keys from your local estate agent at no extra charge if they are within a 10-minute walk of the property. For distances beyond 10 minutes, a small fee of £10 to £20 will be added to the final bill, depending on the location.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingNine" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                        Do I have to cover the Congestion Charge, ULEZ, or parking fees?
+                    </div>
+                    <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#endOfTenancyFaqAccordion">
+                        <div class="card-body">
+                            <p>Yes. If you live in the Congestion Charge or Ultra Low Emission Zone (ULEZ) you will have to cover the fees. The cost of the Congestion Charge zone is £15 per day and the cost of ULEZ is £12.50 per day. Both charges are applicable 7 days a week. Congestion Charge operates from 7:00 am – 22:00 pm, while ULEZ operates 24 hours a day. Our cleaning teams will try to find free parking. However, if they are unable to find free parking we will ask you to cover the fees. These are the only charges that may apply to you, there are no hidden fees.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--Footer Section-->
+    <footer class="bg-primary text-warning text-center py-3">
+        <div class="container">
+            <p>About Us: We provide top-notch cleaning services tailored to your needs.</p>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a class="text-warning" href="index.html">Home</a></li>
+                <li class="list-inline-item"><a class="text-warning" href="about.html">About</a></li>
+                <li class="list-inline-item"><a class="text-warning" href="services.html">Services</a></li>
+                <li class="list-inline-item"><a class="text-warning" href="contact.html">Contact</a></li>
+                <li class="list-inline-item"><a class="text-warning" href="policy.html">Privacy Policy</a></li>
+            </ul>
+        </div>
+    </footer>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+

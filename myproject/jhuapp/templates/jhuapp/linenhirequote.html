@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cleaning Service Quote Request Form</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="quote.css">
+    <style>
+        body {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <form id="cleaningServiceForm">
+                <h2>CLEANING SERVICE QUOTE REQUEST FORM</h2>
+                <div class="form-group">
+                    <label for="propertyAddress">Property Address (Postal Code):</label>
+                    <input type="text" class="form-control" id="propertyAddress" name="propertyAddress" required pattern=".*London.*">
+                </div>
+
+                <!-- Bed Sizes Section -->
+                <div class="form-group">
+                    <label>What type of bed sizes need linens? (Check all that apply):</label>
+                    <div class="counter">
+                        <label>Single</label>
+                        <div class="counter-controls">
+                            <button type="button" onclick="changeValue('singleBeds', -1)">-</button>
+                            <input type="number" id="singleBeds" name="singleBeds" value="0" min="0">
+                            <button type="button" onclick="changeValue('singleBeds', 1)">+</button>
+                        </div>
+                    </div>
+                    <div class="counter">
+                        <label>Double</label>
+                        <div class="counter-controls">
+                            <button type="button" onclick="changeValue('doubleBeds', -1)">-</button>
+                            <input type="number" id="doubleBeds" name="doubleBeds" value="0" min="0">
+                            <button type="button" onclick="changeValue('doubleBeds', 1)">+</button>
+                        </div>
+                    </div>
+                    <div class="counter">
+                        <label>King</label>
+                        <div class="counter-controls">
+                            <button type="button" onclick="changeValue('kingBeds', -1)">-</button>
+                            <input type="number" id="kingBeds" name="kingBeds" value="0" min="0">
+                            <button type="button" onclick="changeValue('kingBeds', 1)">+</button>
+                        </div>
+                    </div>
+                    <div class="counter">
+                        <label>Super King</label>
+                        <div class="counter-controls">
+                            <button type="button" onclick="changeValue('superKingBeds', -1)">-</button>
+                            <input type="number" id="superKingBeds" name="superKingBeds" value="0" min="0">
+                            <button type="button" onclick="changeValue('superKingBeds', 1)">+</button>
+                        </div>
+                    </div>
+                </div>
+                <!--bedding items-->
+                <!-- Additional Bedding Items Section -->
+<div class="form-group">
+    <label>Do you require any additional bedding items? (Check all that apply):</label>
+    <div class="counter">
+        <label>Duvets - Single</label>
+        <div class="counter-controls">
+            <button type="button" onclick="changeValue('duvetSingle', -1)">-</button>
+            <input type="number" id="duvetSingle" name="duvetSingle" value="0" min="0">
+            <button type="button" onclick="changeValue('duvetSingle', 1)">+</button>
+        </div>
+    </div>
+    <div class="counter">
+        <label>Duvets - Double</label>
+        <div class="counter-controls">
+            <button type="button" onclick="changeValue('duvetDouble', -1)">-</button>
+            <input type="number" id="duvetDouble" name="duvetDouble" value="0" min="0">
+            <button type="button" onclick="changeValue('duvetDouble', 1)">+</button>
+        </div>
+    </div>
+    <div class="counter">
+        <label>Duvets - King</label>
+        <div class="counter-controls">
+            <button type="button" onclick="changeValue('duvetKing', -1)">-</button>
+            <input type="number" id="duvetKing" name="duvetKing" value="0" min="0">
+            <button type="button" onclick="changeValue('duvetKing', 1)">+</button>
+        </div>
+    </div>
+    <div class="counter">
+        <label>Duvets - Super King</label>
+        <div class="counter-controls">
+            <button type="button" onclick="changeValue('duvetSuperKing', -1)">-</button>
+            <input type="number" id="duvetSuperKing" name="duvetSuperKing" value="0" min="0">
+            <button type="button" onclick="changeValue('duvetSuperKing', 1)">+</button>
+        </div>
+    </div>
+    <div class="counter">
+        <label>Pillows</label>
+        <div class="counter-controls">
+            <button type="button" onclick="changeValue('pillows', -1)">-</button>
+            <input type="number" id="pillows" name="pillows" value="0" min="0">
+            <button type="button" onclick="changeValue('pillows', 1)">+</button>
+        </div>
+    </div>
+    <div class="counter">
+        <label>Pillow Protector</label>
+        <div class="counter-controls">
+            <button type="button" onclick="changeValue('pillowProtector', -1)">-</button>
+            <input type="number" id="pillowProtector" name="pillowProtector" value="0" min="0">
+            <button type="button" onclick="changeValue('pillowProtector', 1)">+</button>
+        </div>
+    </div>
+    <div class="counter">
+        <label>Mattress Protectors - Single</label>
+        <div class="counter-controls">
+            <button type="button" onclick="changeValue('mattressSingle', -1)">-</button>
+            <input type="number" id="mattressSingle" name="mattressSingle" value="0" min="0">
+            <button type="button" onclick="changeValue('mattressSingle', 1)">+</button>
+        </div>
+    </div>
+    <div class="counter">
+        <label>Mattress Protectors - Double</label>
+        <div class="counter-controls">
+            <button type="button" onclick="changeValue('mattressDouble', -1)">-</button>
+            <input type="number" id="mattressDouble" name="mattressDouble" value="0" min="0">
+            <button type="button" onclick="changeValue('mattressDouble', 1)">+</button>
+        </div>
+    </div>
+    <div class="counter">
+        <label>Mattress Protectors - King</label>
+        <div class="counter-controls">
+            <button type="button" onclick="changeValue('mattressKing', -1)">-</button>
+            <input type="number" id="mattressKing" name="mattressKing" value="0" min="0">
+            <button type="button" onclick="changeValue('mattressKing', 1)">+</button>
+        </div>
+    </div>
+    <div class="counter">
+        <label>Mattress Protectors - Super King</label>
+        <div class="counter-controls">
+            <button type="button" onclick="changeValue('mattressSuperKing', -1)">-</button>
+            <input type="number" id="mattressSuperKing" name="mattressSuperKing" value="0" min="0">
+            <button type="button" onclick="changeValue('mattressSuperKing', 1)">+</button>
+        </div>
+    </div>
+    <div class="counter">
+        <label>Blankets</label>
+        <div class="counter-controls">
+            <button type="button" onclick="changeValue('blankets', -1)">-</button>
+            <input type="number" id="blankets" name="blankets" value="0" min="0">
+            <button type="button" onclick="changeValue('blankets', 1)">+</button>
+        </div>
+    </div>
+    <div class="counter">
+        <label>Kitchen Towels</label>
+        <div class="counter-controls">
+            <button type="button" onclick="changeValue('kitchenTowels', -1)">-</button>
+            <input type="number" id="kitchenTowels" name="kitchenTowels" value="0" min="0">
+            <button type="button" onclick="changeValue('kitchenTowels', 1)">+</button>
+        </div>
+    </div>
+    <div class="counter">
+        <label>Bath Mats</label>
+        <div class="counter-controls">
+            <button type="button" onclick="changeValue('bathMats', -1)">-</button>
+            <input type="number" id="bathMats" name="bathMats" value="0" min="0">
+            <button type="button" onclick="changeValue('bathMats', 1)">+</button>
+        </div>
+    </div>
+    <div class="counter">
+        <label>Bathrobe and Pair of Slippers</label>
+        <div class="counter-controls">
+            <button type="button" onclick="changeValue('bathrobeSlippers', -1)">-</button>
+            <input type="number" id="bathrobeSlippers" name="bathrobeSlippers" value="0" min="0">
+            <button type="button" onclick="changeValue('bathrobeSlippers', 1)">+</button>
+        </div>
+    </div>
+</div>
+
+<!--consumables-->
+<!-- Consumables Section -->
+<div class="form-group">
+    <label>Would you like to include consumable replacement?</label>
+    <div class="form-check">
+        <input type="radio" id="consumablesYes" name="consumables" value="Yes" class="form-check-input">
+        <label for="consumablesYes" class="form-check-label">Yes</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" id="consumablesNo" name="consumables" value="No" class="form-check-input">
+        <label for="consumablesNo" class="form-check-label">No</label>
+    </div>
+</div>
+
+<div id="consumablesDetails" class="form-group">
+    <label>Consumables Required (Check all that apply):</label>
+    <div class="counter">
+        <label>Toilet Paper pack</label>
+        <div class="counter-controls">
+            <button type="button" onclick="changeValue('toiletPaper', -1)">-</button>
+            <input type="number" id="toiletPaper" name="toiletPaper" value="0" min="0">
+            <button type="button" onclick="changeValue('toiletPaper', 1)">+</button>
+        </div>
+    </div>
+    <div class="counter">
+        <label>Paper Towels pack</label>
+        <div class="counter-controls">
+            <button type="button" onclick="changeValue('paperTowels', -1)">-</button>
+            <input type="number" id="paperTowels" name="paperTowels" value="0" min="0">
+            <button type="button" onclick="changeValue('paperTowels', 1)">+</button>
+        </div>
+    </div>
+    <div class="counter">
+        <label>Toiletries set</label>
+        <div class="counter-controls">
+            <button type="button" onclick="changeValue('toiletriesSet', -1)">-</button>
+            <input type="number" id="toiletriesSet" name="toiletriesSet" value="0" min="0">
+            <button type="button" onclick="changeValue('toiletriesSet', 1)">+</button>
+        </div>
+    </div>
+    <div class="counter">
+        <label>Hand soap</label>
+        <div class="counter-controls">
+            <button type="button" onclick="changeValue('handSoap', -1)">-</button>
+            <input type="number" id="handSoap" name="handSoap" value="0" min="0">
+            <button type="button" onclick="changeValue('handSoap', 1)">+</button>
+        </div>
+    </div>
+    <div class="counter">
+        <label>Body soap</label>
+        <div class="counter-controls">
+            <button type="button" onclick="changeValue('bodySoap', -1)">-</button>
+            <input type="number" id="bodySoap" name="bodySoap" value="0" min="0">
+            <button type="button" onclick="changeValue('bodySoap', 1)">+</button>
+        </div>
+    </div>
+    <div class="counter">
+        <label>Shampoo</label>
+        <div class="counter-controls">
+            <button type="button" onclick="changeValue('shampoo', -1)">-</button>
+            <input type="number" id="shampoo" name="shampoo" value="0" min="0">
+            <button type="button" onclick="changeValue('shampoo', 1)">+</button>
+        </div>
+    </div>
+    <div class="counter">
+        <label>Conditioner</label>
+        <div class="counter-controls">
+            <button type="button" onclick="changeValue('conditioner', -1)">-</button>
+            <input type="number" id="conditioner" name="conditioner" value="0" min="0">
+            <button type="button" onclick="changeValue('conditioner', 1)">+</button>
+        </div>
+    </div>
+    <div class="counter">
+        <label>Shower cap</label>
+        <div class="counter-controls">
+            <button type="button" onclick="changeValue('showerCap', -1)">-</button>
+            <input type="number" id="showerCap" name="showerCap" value="0" min="0">
+            <button type="button" onclick="changeValue('showerCap', 1)">+</button>
+        </div>
+    </div>
+    <div class="counter">
+        <label>Toothbrush & Toothpaste</label>
+        <div class="counter-controls">
+            <button type="button" onclick="changeValue('toothbrushToothpaste', -1)">-</button>
+            <input type="number" id="toothbrushToothpaste" name="toothbrushToothpaste" value="0" min="0">
+            <button type="button" onclick="changeValue('toothbrushToothpaste', 1)">+</button>
+        </div>
+    </div>
+</div>
+    <!--Acess kinikan-->
+    <!-- Access Details Section -->
+<div class="form-group">
+    <label>How can the operative access the building?</label>
+    <div class="form-check">
+        <input type="radio" id="accessAtProperty" name="accessMethod" value="I will be at the property" class="form-check-input">
+        <label for="accessAtProperty" class="form-check-label">I will be at the property</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" id="accessConcierge" name="accessMethod" value="Through a concierge" class="form-check-input">
+        <label for="accessConcierge" class="form-check-label">Through a concierge</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" id="accessKeySafe" name="accessMethod" value="Key safe" class="form-check-input">
+        <label for="accessKeySafe" class="form-check-label">Key safe</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" id="accessHiddenKey" name="accessMethod" value="Hidden key" class="form-check-input">
+        <label for="accessHiddenKey" class="form-check-label">Hidden key</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" id="accessEstateAgent" name="accessMethod" value="Using Keys collected from the local estate agent" class="form-check-input">
+        <label for="accessEstateAgent" class="form-check-label">Using Keys collected from the local estate agent</label>
+    </div>
+</div>
+
+<div class="form-group">
+    <label for="specialRequests">Do you have any special requests or instructions?</label>
+    <textarea id="specialRequests" name="specialRequests" class="form-control"></textarea>
+</div>
+
+<div class="form-group">
+    <label for="deliveryDate">Preferred Date for Delivery and Collection:</label>
+    <input type="date" id="deliveryDate" name="deliveryDate" class="form-control">
+</div>
+
+<div class="form-group">
+    <label>Contact Information</label>
+    <div class="form-group">
+        <label for="contactName">Name:</label>
+        <input type="text" id="contactName" name="contactName" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label for="contactPhone">Phone Number:</label>
+        <input type="tel" id="contactPhone" name="contactPhone" class="form-control" required>
+    </div>
+    <div class="form-group">
+        <label for="contactEmail">Email Address:</label>
+        <input type="email" id="contactEmail" name="contactEmail" class="form-control" required>
+    </div>
+</div>
+
+<div class="form-group">
+    <label>How did you hear about us?</label>
+    <div class="form-check">
+        <input type="radio" id="googleSearch" name="referralSource" value="Google Search" class="form-check-input">
+        <label for="googleSearch" class="form-check-label">Google Search</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" id="referral" name="referralSource" value="Referral" class="form-check-input">
+        <label for="referral" class="form-check-label">Referral</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" id="socialMedia" name="referralSource" value="Social Media" class="form-check-input">
+        <label for="socialMedia" class="form-check-label">Social Media</label>
+    </div>
+    <div class="form-check">
+        <input type="radio" id="otherSource" name="referralSource" value="Other" class="form-check-input">
+        <label for="otherSource" class="form-check-label">Other:</label>
+        <input type="text" id="otherReferralSource" name="otherReferralSource" class="form-control">
+    </div>
+</div>
+
+<button type="submit" class="btn btn-primary">Submit</button>
+<div class="form-group">
+    <label>Total Cost: £<span id="totalCost">0</span></label>
+</div>
+
+            </form>
+        </div>
+    </div>
+    
+    
+
+    <script>
+        function changeValue(id, delta) {
+            const input = document.getElementById(id);
+            let value = parseInt(input.value, 10);
+            value = isNaN(value) ? 0 : value;
+            value += delta;
+            if (value < 0) value = 0;
+            input.value = value;
+        }
+
+    </script>
+    <script src="index.js"></script>
+</body>
+</html>

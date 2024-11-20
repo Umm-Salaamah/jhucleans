@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cleaning Service Form</title>
+  <link rel="stylesheet" href="quote.css">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      body{
+        background-color: #f4f4f4;
+      }
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="form-container">
+      <form action="" id="cleaningServiceForm">
+        <h2>End of Tenancy Request Quote Form</h2>
+        <div class="form-group">
+          <label for="address">Property Address (Street, City, Postal Code):</label>
+          <input type="text" id="address" name="address" pattern=".*London.*" required>
+        </div>
+        <div class="form-group">
+          <label>Type of Cleaning Required:</label>
+          <div class="form-check">
+            <input type="checkbox" id="checkin" class="form-check-input" name="cleaningType" value="Check-in/Check-out Cleaning">
+            <label for="checkin"  class="form-check-label">Check-in/Check-out Cleaning</label>
+          </div>
+          <div class="form-check">
+            <input type="checkbox" id="midstay"  class="form-check-input"name="cleaningType" value="Mid-Stay Cleaning">
+            <label for="midstay" class="form-check-label">Mid-Stay Cleaning</label>
+          </div>
+          <div class="form-check">
+            <input type="checkbox" id="checkin" class="form-check-input" name="cleaningType" value="Check-in/Check-out Cleaning">
+            <label for="checkin"  class="form-check-label">Check-in/Check-out Cleaning</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Type of Property:</label>
+          <div class="form-check">
+            <input type="radio" id="flat" class="form-check-input" name="propertyType" value="Flat">
+            <label for="flat">Flat</label>
+          </div>
+          <div class="form-check">
+            <input type="radio" id="house" class="form-check-input" name="propertyType" value="House">
+            <label for="house">House</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="counter">
+            <label>Number of Bedrooms:</label>
+            <div class="counter-controls">
+              <button type="button" onclick="decrement('bedrooms')">-</button>
+              <input type="number" id="bedrooms" name="bedrooms" value="0" min="0">
+              <button type="button" onclick="increment('bedrooms')">+</button>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="counter">
+            <label>Number of Bathrooms:</label>
+            <div class="counter-controls">
+              <button type="button" onclick="decrement('bathrooms')">-</button>
+              <input type="number" id="bathrooms" name="bathrooms" value="0" min="0">
+              <button type="button" onclick="increment('bathrooms')">+</button>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Do you need any upholstery cleaning?</label>
+          <div class="form-check">
+            <input type="radio" id="upholsteryYes" name="upholsteryCleaning" value="yes" onclick="toggleUpholsteryCleaning(true)">
+            <label for="upholsteryYes">Yes</label>
+          </div>
+          <div class="form-check">
+            <input type="radio" id="upholsteryNo" name="upholsteryCleaning" value="no" onclick="toggleUpholsteryCleaning(false)">
+            <label for="upholsteryNo">No</label>
+          </div>
+        </div>
+        <div class="form-group hidden"  id="upholsteryCleaningOptions">
+          <label>Which of these require a deep clean?</label>
+          <div class="counter">
+            <label for="singleMattress">Single Mattress:</label>
+            <div class="counter-controls">
+              <button type="button" onclick="decrement('singleMattress')">-</button>
+              <input type="number" id="singleMattress" name="singleMattress" value="0" min="0">
+              <button type="button" onclick="increment('singleMattress')">+</button>
+            </div>
+          </div>
+          <div class="counter">
+            <label for="doubleMattressMattress">Double Mattress:</label>
+            <div class="counter-controls">
+              <button type="button" onclick="decrement('doubleMattress')">-</button>
+              <input type="number" id="doubleMattressMattress" name="doubleMattressMattress" value="0" min="0">
+              <button type="button" onclick="increment('doubleMattressMattress')">+</button>
+            </div>
+          </div>
+          <div class="counter">
+            <label for="kingSizeMattress">King Size Mattress:</label>
+            <div class="counter-controls">
+              <button type="button" onclick="decrement('kingSizeMattress')">-</button>
+              <input type="number" id="kingSizeMattress" name="kingSizeMattress" value="0" min="0">
+              <button type="button" onclick="increment('kingSizeMattress')">+</button>
+            </div>
+          </div>
+          <div class="counter">
+            <label for="diningChair">Dining Chair:</label>
+            <div class="counter-controls">
+              <button type="button" onclick="decrement('diningChair')">-</button>
+              <input type="number" id="diningChair" name="diningChair" value="0" min="0">
+              <button type="button" onclick="increment('diningChair')">+</button>
+            </div>
+          </div>
+          <div class="counter">
+            <label for="armChair">Arm Chair:</label>
+            <div class="counter-controls">
+              <button type="button" onclick="decrement('armChair')">-</button>
+              <input type="number" id="armChair" name="armChair" value="0" min="0">
+              <button type="button" onclick="increment('armChair')">+</button>
+            </div>
+          </div>
+          <div class="counter">
+            <label for="footChair">Foot Chair:</label>
+            <div class="counter-controls">
+              <button type="button" onclick="decrement('footChair')">-</button>
+              <input type="number" id="footChair" name="footChair" value="0" min="0">
+              <button type="button" onclick="increment('footChair')">+</button>
+            </div>
+          </div>
+          <div class="counter">
+            <label for="cornerChair">Corner Chair:</label>
+            <div class="counter-controls">
+              <button type="button" onclick="decrement('cornerChair')">-</button>
+              <input type="number" id="cornerChair" name="cornerChair" value="0" min="0">
+              <button type="button" onclick="increment('cornerChair')">+</button>
+            </div>
+          </div>
+          <div class="counter">
+            <label for="singleChair">Single Chair:</label>
+            <div class="counter-controls">
+              <button type="button" onclick="decrement('singleChair')">-</button>
+              <input type="number" id="singleChair" name="singleChair" value="0" min="0">
+              <button type="button" onclick="increment('singleChair')">+</button>
+            </div>
+          </div>
+          <div class="counter">
+            <label for="2seaterSofa">2 seater sofa:</label>
+            <div class="counter-controls">
+              <button type="button" onclick="decrement('2seaterSofa')">-</button>
+              <input type="number" id="2seaterSofa" name="2seaterSofa" value="0" min="0">
+              <button type="button" onclick="increment('2seaterSofa')">+</button>
+            </div>
+          </div>
+          <div class="counter">
+            <label for="2seaterSofa">3 seater sofa:</label>
+            <div class="counter-controls">
+              <button type="button" onclick="decrement('3seaterSofa')">-</button>
+              <input type="number" id="3seaterSofa" name="3seaterSofa" value="0" min="0">
+              <button type="button" onclick="increment('3seaterSofa')">+</button>
+            </div>
+          </div>
+          <div class="counter">
+            <label for="2seaterSofa">4 seater sofa:</label>
+            <div class="counter-controls">
+              <button type="button" onclick="decrement('4seaterSofa')">-</button>
+              <input type="number" id="4seaterSofa" name="4seaterSofa" value="0" min="0">
+              <button type="button" onclick="increment('4seaterSofa')">+</button>
+            </div>
+          </div>
+          <div class="counter">
+            <label for="halfPair">Half Length Pair of Curtains:</label>
+            <div class="counter-controls">
+              <button type="button" onclick="decrement('5seaterSofa')">-</button>
+              <input type="number" id="5seaterSofa" name="5seaterSofa" value="0" min="0">
+              <button type="button" onclick="increment('5seaterSofa')">+</button>
+            </div>
+          </div>
+          <div class="counter">
+            <label for="fullPair">Full Length Pair of Curtains:</label>
+            <div class="counter-controls">
+              <button type="button" onclick="decrement('fullPair')">-</button>
+              <input type="number" id="fullPair" name="fullPair" value="0" min="0">
+              <button type="button" onclick="increment('fullPair')">+</button>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Rug</label>
+            <div class="form-check">
+              <input type="radio" id="large" name="large" value="Large">
+              <label for="large">Large</label>
+            </div>
+            <div class="form-check">
+              <input type="radio" id="medium" name="medium" value="Medium">
+              <label for="medium">Medium</label>
+            </div>
+            <div class="form-check">
+              <input type="radio" id="small" name="small" value="Small">
+              <label for="small">Small</label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>We assume there is one kitchen and one living room. Are there any additional rooms and appliances which require cleaning?
+          </label>
+          <div class="counter">
+            <label for="study">Study:</label>
+            <div class="counter-controls">
+              <button type="button" onclick="decrement('study')">-</button>
+              <input type="number" id="study" name="study" value="0" min="0">
+              <button type="button" onclick="increment('study')">+</button>
+            </div>
+          </div>
+          <div class="counter">
+            <label for="extraOven">Extra Oven:</label>
+            <div class="counter-controls">
+              <button type="button" onclick="decrement('extraOven')">-</button>
+              <input type="number" id="extraOven" name="extraOven" value="0" min="0">
+              <button type="button" onclick="increment('extraOven')">+</button>
+            </div>
+          </div>
+          <div class="counter">
+            <label for="doubleOven">Double Oven</label>
+            <div class="counter-controls">
+              <button type="button" onclick="decrement('doubleOven')">-</button>
+              <input type="number" id="doubleOven" name="doubleOven" value="0" min="0">
+              <button type="button" onclick="increment('doubleOven')">+</button>
+            </div>
+          </div>
+          <div class="counter">
+            <label for="extraFridge">Extra Fridge:</label>
+            <div class="counter-controls">
+              <button type="button" onclick="decrement('extraFridge')">-</button>
+              <input type="number" id="extraFridge" name="extraFridge" value="0" min="0">
+              <button type="button" onclick="increment('extraFridge')">+</button>
+            </div>
+          </div>
+          <div class="counter">
+            <label for="extraFreezer">Extra Freezer:</label>
+            <div class="counter-controls">
+              <button type="button" onclick="decrement('extraFreezer')">-</button>
+              <input type="number" id="extraFreezer" name="extraFreezer" value="0" min="0">
+              <button type="button" onclick="increment('extraFreezer')">+</button>
+            </div>
+          </div>
+          <div class="counter">
+            <label for="fridgeFreezer">Fridge Freezer:</label>
+            <div class="counter-controls">
+              <button type="button" onclick="decrement('fridgeFreezer')">-</button>
+              <input type="number" id="fridgeFreezer" name="fridgeFreezer" value="0" min="0">
+              <button type="button" onclick="increment('fridgeFreezer')">+</button>
+            </div>
+          </div>
+          <div class="counter">
+            <label for="balcony">Balcony:</label>
+            <div class="counter-controls">
+              <button type="button" onclick="decrement('balcony')">-</button>
+              <input type="number" id="balcony" name="balcony" value="0" min="0">
+              <button type="button" onclick="increment('balcony')">+</button>
+            </div>
+          </div>
+          <div class="counter">
+            <label for="garage">Garage:</label>
+            <div class="counter-controls">
+              <button type="button" onclick="decrement('garage')">-</button>
+              <input type="number" id="garage" name="garage" value="0" min="0">
+              <button type="button" onclick="increment('garage')">+</button>
+            </div>
+          </div>
+          <div class="counter">
+            <label for="conservatory">Conservatory:</label>
+            <div class="counter-controls">
+              <button type="button" onclick="decrement('conservatory')">-</button>
+              <input type="number" id="conservatory" name="conservatory" value="0" min="0">
+              <button type="button" onclick="increment('conservatory')">+</button>
+            </div>
+          </div>
+          <div class="counter">
+            <label for="utilityRoom">Utility Room:</label>
+            <div class="counter-controls">
+              <button type="button" onclick="decrement('utilityRoom')">-</button>
+              <input type="number" id="utilityRoom" name="utilityRoom" value="0" min="0">
+              <button type="button" onclick="increment('utilityRoom')">+</button>
+            </div>
+          </div>
+          <div class="counter">
+            <label for="wardrobe">Walk-in wardrobe:</label>
+            <div class="counter-controls">
+              <button type="button" onclick="decrement('wardrobe')">-</button>
+              <input type="number" id="wardrobe" name="wardrobe" value="0" min="0">
+              <button type="button" onclick="increment('wardrobe')">+</button>
+            </div>
+          </div>
+          <div class="counter">
+            <label for="dishwasher">Extra Dishwasher:</label>
+            <div class="counter-controls">
+              <button type="button" onclick="decrement('dishwasher')">-</button>
+              <input type="number" id="dishwasher" name="dishwasher" value="0" min="0">
+              <button type="button" onclick="increment('dishwasher')">+</button>
+            </div>
+          </div>
+          <div class="counter">
+            <label for="washingMachine">Extra Washing Machine:</label>
+            <div class="counter-controls">
+              <button type="button" onclick="decrement('washingMachine')">-</button>
+              <input type="number" id="washingMachine" name="washingMachine" value="0" min="0">
+              <button type="button" onclick="increment('washingMachine')">+</button>
+            </div>
+          </div>
+          <div class="counter">
+            <label for="basement">Basement:</label>
+            <div class="counter-controls">
+              <button type="button" onclick="decrement('basement')">-</button>
+              <input type="number" id="basement" name="basement" value="0" min="0">
+              <button type="button" onclick="increment('basement')">+</button>
+            </div>
+          </div>
+          <div class="counter">
+            <label for="attic">Attic:</label>
+            <div class="counter-controls">
+              <button type="button" onclick="decrement('attic')">-</button>
+              <input type="number" id="attic" name="attic" value="0" min="0">
+              <button type="button" onclick="increment('attic')">+</button>
+            </div>
+          </div>
+          <label>Other: <input type="text" name="other"></label><br>
+        </div>
+        <div class="form-group">
+          <label>What kind of carpet cleaning do you need?</label>
+          <div class="form-check">
+            <input type="radio" id="vacuuming" name="carpetCleaning" value="Vacuuming only">
+            <label for="vacuuming">Vacuuming only</label>
+          </div>
+          <div class="form-check">
+            <input type="radio" id="deepCleaning" name="carpetCleaning" value="Deep cleaning" onclick="toggleCarpetCleaning(true)">
+            <label for="deepCleaning">Deep cleaning</label>
+          </div>
+          <div class="form-check">
+            <input type="radio" id="noCarpets" name="carpetCleaning" value="No carpets" onclick="toggleCarpetCleaning(false)">
+            <label for="noCarpets">No carpets</label>
+          </div>
+        </div>
+        <div id="carpetCleaningOptions" class="hidden form-group">
+          <label>What rooms require a carpet deep clean?</label>
+          <div class="counter">
+            <label for="bedroomCarpet">Bedroom:</label>
+            <div class="counter-controls">
+              <button type="button" onclick="decrement('bedroomCarpet')">-</button>
+              <input type="number" id="bedroomCarpet" name="bedroomCarpet" value="0" min="0">
+              <button type="button" onclick="increment('bedroomCarpet')">+</button>
+            </div>
+          </div>
+          <div class="counter">
+            <label for="livingRoom">Living room:</label>
+            <div class="counter-controls">
+              <button type="button" onclick="decrement('livingRoom')">-</button>
+              <input type="number" id="livingRoom" name="livingRoom" value="0" min="0">
+              <button type="button" onclick="increment('livingRoom')">+</button>
+            </div>
+          </div>
+          <div class="counter">
+            <label for="hallway">Hallway:</label>
+            <div class="counter-controls">
+              <button type="button" onclick="decrement('hallway')">-</button>
+              <input type="number" id="hallway" name="hallway" value="0" min="0">
+              <button type="button" onclick="increment('hallway')">+</button>
+            </div>
+          </div>
+          <div class="counter">
+            <label for="landing">Landing:</label>
+            <div class="counter-controls">
+              <button type="button" onclick="decrement('landing')">-</button>
+              <input type="number" id="landing" name="landing" value="0" min="0">
+              <button type="button" onclick="increment('landing')">+</button>
+            </div>
+          </div>
+          <div class="counter">
+            <label for="dining">Dining:</label>
+            <div class="counter-controls">
+              <button type="button" onclick="decrement('dining')">-</button>
+              <input type="number" id="dining" name="dining" value="0" min="0">
+              <button type="button" onclick="increment('dining')">+</button>
+            </div>
+          </div>
+          <div class="counter">
+            <label for="stairs">Stairs(1 euro per step):</label>
+            <div class="counter-controls">
+              <button type="button" onclick="decrement('stairs')">-</button>
+              <input type="number" id="stairs" name="stairs" value="0" min="0">
+              <button type="button" onclick="increment('stairs')">+</button>
+            </div>
+          </div>
+          <label>Other: <input type="text" name="other"></label><br>
+        </div>
+        <div class="form-group">
+          <label>How can the operative access the building?</label>
+          <div class="form-check">
+            <input type="radio" id="atProperty" name="access" value="I will be at the property">
+            <label for="atProperty">I will be at the property</label>
+          </div>
+          <div class="form-check">
+            <input type="radio" id="concierge" name="access" value="Through a concierge">
+            <label for="concierge">Through a concierge</label>
+          </div>
+          <div class="form-check">
+            <input type="radio" id="keySafe" name="access" value="Key safe">
+            <label for="keySafe">Key safe</label>
+          </div>
+          <div class="form-check">
+            <input type="radio" id="hiddenKey" name="access" value="Hidden key">
+            <label for="hiddenKey">Hidden key</label>
+          </div>
+          <div class="form-check">
+            <input type="radio" id="estateAgent" name="access" value="Using Keys collected from the local estate agent">
+            <label for="estateAgent">Using Keys collected from the local estate agent</label>
+          </div>
+          <div class="form-group">
+            <label for="specialRequests">Do you have any special requests or instructions?</label>
+            <textarea id="specialRequests" name="specialRequests" class="form-control"></textarea>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="deliveryDate">Preferred Date for Delivery and Collection:</label>
+        <input type="date" id="deliveryDate" name="deliveryDate" class="form-control">
+    </div>
+    
+    <div class="form-group">
+        <label>Contact Information</label>
+        <div class="form-group">
+            <label for="contactName">Name:</label>
+            <input type="text" id="contactName" name="contactName" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="contactPhone">Phone Number:</label>
+            <input type="tel" id="contactPhone" name="contactPhone" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <label for="contactEmail">Email Address:</label>
+            <input type="email" id="contactEmail" name="contactEmail" class="form-control" required>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label>How did you hear about us?</label>
+        <div class="form-check">
+            <input type="radio" id="googleSearch" name="referralSource" value="Google Search" class="form-check-input">
+            <label for="googleSearch" class="form-check-label">Google Search</label>
+        </div>
+        <div class="form-check">
+            <input type="radio" id="referral" name="referralSource" value="Referral" class="form-check-input">
+            <label for="referral" class="form-check-label">Referral</label>
+        </div>
+        <div class="form-check">
+            <input type="radio" id="socialMedia" name="referralSource" value="Social Media" class="form-check-input">
+            <label for="socialMedia" class="form-check-label">Social Media</label>
+        </div>
+        <div class="form-check">
+            <input type="radio" id="otherSource" name="referralSource" value="Other" class="form-check-input">
+            <label for="otherSource" class="form-check-label">Other:</label>
+            <input type="text" id="otherReferralSource" name="otherReferralSource" class="form-control">
+        </div>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <div class="form-group">
+        <label>Total Cost: £<span id="totalCost">0</span></label>
+    </div>
+      </form>
+    </div>
+  </div>
+
+
+  <script>
+    function increment(id) {
+      var input = document.getElementById(id);
+      input.value = parseInt(input.value) + 1;
+    }
+
+    function decrement(id) {
+      var input = document.getElementById(id);
+      if (input.value > 0) {
+        input.value = parseInt(input.value) - 1;
+      }
+    }
+
+    function toggleUpholsteryCleaning(show) {
+      document.getElementById('upholsteryCleaningOptions').classList.toggle('hidden', !show);
+    }
+
+    function toggleCarpetCleaning(show) {
+      document.getElementById('carpetCleaningOptions').classList.toggle('hidden', !show);
+    }
+  </script>
+</body>
+</html>

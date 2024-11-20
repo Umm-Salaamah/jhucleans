@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="quote.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <form id="cleaningServiceForm">
+                <h2>Deep Clean Request Form</h2>
+                <div class="form-group">
+                    <label for="postcode">Postcode (WITHIN LONDON):</label>
+                    <input type="text" class="form-control" id="postcode" name="postcode" required><br><br>
+                </div>
+                <div class="form-group">
+                    <label>Type of Space (Check all that apply):</label><br>
+                    <div class="form-check">
+                        <input type="radio" id="residential" class="form-check-input" name="type_of_space" value="Residential">
+                        <label for="residential" class="form-check-label">Residential</label><br>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="commercial" class="form-check-input" name="type_of_space" value="Commercial">
+                        <label for="commercial" class="form-check-label">Commercial</label><br><br>
+                    </div>
+                </div>
+                <div class="form-group" id="commercialDetails" style="display: none;">
+                    <div id="commercialDetails">
+                        <div class="form-group">
+                            <label for="company_name">Company Name:</label>
+                            <input type="text" class="form-control" id="company_name" name="company_name"><br><br>
+                        </div>
+                        <div class="form-group">
+                            <label>Type of Business Space (Check all that apply):</label>
+                            <div class="form-check">
+                                <input type="checkbox" id="daycare" class="form-check-input" name="business_space" value="Daycare/Nursery">
+                                <label for="daycare" class="form-check-label">Daycare/Nursery</label><br>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" id="communal" class="form-check-input" name="business_space" value="Communal area">
+                                <label for="communal" class="form-check-label">Communal area</label><br>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" id="restaurant" class="form-check-input" name="business_space" value="Restaurant">
+                                <label for="restaurant" class="form-check-label">Restaurant</label><br>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" id="church" class="form-check-input" name="business_space" value="Church">
+                                <label for="church" class="form-check-label">Church</label><br>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" id="car_dealership" class="form-check-input" name="business_space" value="Car dealership/showroom">
+                                <label for="car_dealership" class="form-check-label">Car dealership/showroom</label><br>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" id="library" class="form-check-input" name="business_space" value="Library">
+                                <label for="library" class="form-check-label">Library</label><br>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" id="gym" class="form-check-input" name="business_space" value="Gym">
+                                <label for="gym" class="form-check-label">Gym</label><br>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" id="halls" class="form-check-input" name="business_space" value="Halls">
+                                <label for="halls" class="form-check-label">Halls</label><br>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" id="care_homes" class="form-check-input" name="business_space" value="Care homes">
+                                <label for="care_homes" class="form-check-label">Care homes</label><br>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" id="hospitality" class="form-check-input" name="business_space" value="Hospitality & Hotel">
+                                <label for="hospitality" class="form-check-label">Hospitality & Hotel</label><br>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" id="studio" class="form-check-input" name="business_space" value="Tv, Radio/Film studio">
+                                <label for="studio" class="form-check-label">Tv, Radio/Film studio</label><br>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" id="warehouse" class="form-check-input" name="business_space" value="Warehouse cleaning">
+                                <label for="warehouse" class="form-check-label">Warehouse cleaning</label><br>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" id="correctional" class="form-check-input" name="business_space" value="Correctional Facilities">
+                                <label for="correctional" class="form-check-label">Correctional Facilities</label><br>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" id="banks" class="form-check-input" name="business_space" value="Banks">
+                                <label for="banks" class="form-check-label">Banks</label><br>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" id="prison" class="form-check-input" name="business_space" value="Prison">
+                                <label for="prison" class="form-check-label">Prison</label><br>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" id="others" class="form-check-input" name="business_space" value="Others">
+                                <label for="others" class="form-check-label">Others</label><br>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Approximate Square Footage (Select one):</label><br>
+                            <div class="form-check">
+                                <input type="radio" id="sqft_1000" class="form-check-input" name="square_footage" value="Floor space up to 1,000 sq. ft.">
+                                <label for="sqft_1000" class="form-check-label">Floor space up to 1,000 sq. ft.</label><br>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" id="sqft_1500" class="form-check-input" name="square_footage" value="Floor space up to 1,500 sq. ft.">
+                                <label for="sqft_1500" class="form-check-label">Floor space up to 1,500 sq. ft.</label><br>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" id="sqft_2000" class="form-check-input" name="square_footage" value="Floor space up to 2,000 sq. ft.">
+                                <label for="sqft_2000" class="form-check-label">Floor space up to 2,000 sq. ft.</label><br>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" id="sqft_2500" class="form-check-input" name="square_footage" value="Floor space up to 2,500 sq. ft.">
+                                <label for="sqft_2500" class="form-check-label">Floor space up to 2,500 sq. ft.</label><br>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" id="sqft_3000" class="form-check-input" name="square_footage" value="Floor space up to 3,000 sq. ft.">
+                                <label for="sqft_3000" class="form-check-label">Floor space up to 3,000 sq. ft.</label><br>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" id="sqft_3500" class="form-check-input" name="square_footage" value="Floor space up to 3,500 sq. ft.">
+                                <label for="sqft_3500" class="form-check-label">Floor space up to 3,500 sq. ft.</label><br>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" id="sqft_4000" class="form-check-input" name="square_footage" value="Floor space up to 4,000 sq. ft.">
+                             <label for="sqft_4000" class="form-check-label">Floor space up to 4,000 sq. ft.</label><br>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" id="sqft_4500" class="form-check-input" name="square_footage" value="Floor space up to 4,500 sq. ft.">
+                                <label for="sqft_4500" class="form-check-label">Floor space up to 4,500 sq. ft.</label><br>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" id="sqft_5000" class="form-check-input" name="square_footage" value="Floor space up to 5,000 sq. ft.">
+                                <label for="sqft_5000" class="form-check-label">Floor space up to 5,000 sq. ft.</label><br><br> 
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Preferred Cleaning Frequency:</label><br>
+                            <div class="form-check">
+                                <input type="radio" id="one_time" class="form-check-input" name="cleaning_frequency" value="One-Time Deep Clean">
+                                <label for="one_time" class="form-check-label">One-Time Deep Clean</label><br>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" id="weekly" class="form-check-input" name="cleaning_frequency" value="Weekly Deep Clean">
+                                <label for="weekly" class="form-check-label">Weekly Deep Clean</label><br>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" id="monthly"  class="form-check-input"name="cleaning_frequency" value="Monthly Deep Clean">
+                                <label for="monthly" class="form-check-label">Monthly Deep Clean</label><br>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" id="other" class="form-check-input" name="cleaning_frequency" value="Other">
+                                <label for="other" class="form-check-label">Other:</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                                <label for="preferred_date" class="form-check-label">Preferred Date:</label><br>
+                                <input type="date" id="preferred_date" class="form-check-input mx-1 my-2" name="preferred_date"><br>
+                        </div>
+                        <div class="form-group">
+                            <label>Preferred Time (Select one):</label>
+                            <div class="form-check">
+                                <input type="radio" id="early_morning" class="form-check-input" name="preferred_time" value="Early Morning (Before Business Hours)">
+                                <label for="early_morning" class="form-check-label">Early Morning (Before Business Hours)</label><br>
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" id="mid_day" class="form-check-input" name="preferred_time" value="Mid-Day (During Business Hours)">
+                                <label for="mid_day" class="form-check-label">Mid-Day (During Business Hours)</label><br>  
+                            </div>
+                            <div class="form-check">
+                                <input type="radio" id="evening" class="form-check-input" name="preferred_time" value="Evening (After Business Hours)">
+                                <label for="evening" class="form-check-label">Evening (After Business Hours)</label><br> 
+                           </div>
+                           <div class="form-check">
+                            <input type="radio" id="overnight" class="form-check-input" name="preferred_time" value="Overnight">
+                            <label for="overnight" class="form-check-label">Overnight</label><br><br>
+                          </div>
+                    </div>
+                </div>
+            </div>
+            <!--Residential -->
+            <div id="residentialDetails" class="form-group" style="display:none;">
+                <div class="form-group">
+                    <div class="counter">
+                        <label>Number of Bedrooms:</label>
+                        <div class="counter-controls">
+                            <button type="button" onclick="changeValue('bedrooms', -1)">-</button>
+                            <input type="text" id="bedrooms" name="bedrooms" value="0" readonly>
+                            <button type="button" onclick="changeValue('bedrooms', 1)">+</button><br><br>
+                        </div>
+                    </div>
+                    <div class="counter">
+                        <label>Number of Bathrooms:</label>
+                        <div class="counter-controls">
+                            <button type="button" onclick="changeValue('bathrooms', -1)">-</button>
+                            <input type="text" id="bathrooms" name="bathrooms" value="0" readonly>
+                            <button type="button" onclick="changeValue('bathrooms', 1)">+</button><br><br>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Do you require professional carpet cleaning?</label><br>
+                    <div class="form-check">
+                        <input type="radio" id="carpet_yes" class="form-check-input" name="carpet_cleaning" value="Yes" onclick="toggleCarpetCleaning(true)">
+                        <label for="carpet_yes" class="form-check-label">Yes</label><br>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="carpet_no" class="form-check-input" name="carpet_cleaning" value="No, just hoovering" onclick="toggleCarpetCleaning(false)">
+                        <label for="carpet_no" class="form-check-label">No, just hoovering</label><br><br>
+                    </div>
+                </div>
+                <div class="form-group" id="carpetCleaningOptions" style="display:none;">
+                    <label>What rooms require a carpet deep clean?</label>
+                    <div class="counter">
+                        <label for="bedroomCarpet">Bedroom:</label>
+                        <div class="counter-controls">
+                            <button type="button" onclick="decrement('bedroomCarpet')">-</button>
+                            <input type="number" id="bedroomCarpet" name="bedroomCarpet" value="0" min="0">
+                            <button type="button" onclick="increment('bedroomCarpet')">+</button>
+                        </div>
+                    </div>
+                    <div class="counter">
+                        <label for="bedroomCarpet">Living Room:</label>
+                        <div class="counter-controls">
+                            <button type="button" onclick="decrement('livingRoomCarpet')">-</button>
+                            <input type="number" id="livingRoomCarpet" name="livingRoomCarpet" value="0" min="0">
+                            <button type="button" onclick="increment('livingRoomCarpet')">+</button>
+                        </div>
+                    </div>
+                    <div class="counter">
+                        <label for="bedroomCarpet">Hallway:</label>
+                        <div class="counter-controls">
+                            <button type="button" onclick="decrement('hallwayCarpet')">-</button>
+                            <input type="number" id="hallwayCarpet" name="hallwayCarpet" value="0" min="0">
+                            <button type="button" onclick="increment('hallwayCarpet')">+</button>
+                        </div>
+                    </div>
+                    <div class="counter">
+                        <label for="bedroomCarpet">Landing:</label>
+                        <div class="counter-controls">
+                            <button type="button" onclick="decrement('landingCarpet')">-</button>
+                            <input type="number" id="landingCarpet" name="landingCarpet" value="0" min="0">
+                            <button type="button" onclick="increment('landingCarpet')">+</button>
+                        </div>
+                    </div>
+                    <div class="counter">
+                        <label for="bedroomCarpet">Dining:</label>
+                        <div class="counter-controls">
+                            <button type="button" onclick="decrement('diningCarpet')">-</button>
+                            <input type="number" id="diningCarpet" name="diningCarpet" value="0" min="0">
+                            <button type="button" onclick="increment('diningCarpet')">+</button>
+                        </div>
+                    </div>
+                    <div class="counter">
+                        <label for="bedroomCarpet">Stairs:</label>
+                        <div class="counter-controls">
+                            <button type="button" onclick="decrement('stairsCarpet')">-</button>
+                            <input type="number" id="stairsCarpet" name="stairsCarpet" value="0" min="0">
+                            <button type="button" onclick="increment('stairsCarpet')">+</button>
+                        </div>
+                    </div>
+                    <label for="otherCarpet">Other:</label>
+                    <input type="text" id="otherCarpet" name="otherCarpet">
+                    <br>
+                </div>
+                <div class="form-group">
+                    <label>Do you need any upholstery deep clean?</label>
+                    <div class="form-check">
+                        <input type="radio" id="upholsteryYes" class="form-check-input" name="upholsteryCleaning" value="yes" onclick="toggleUpholsteryCleaning(true)">
+                        <label for="upholsteryYes" class="form-check-label">Yes</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="upholsteryNo" class="form-check-input" name="upholsteryCleaning" value="no" onclick="toggleUpholsteryCleaning(false)">
+                        <label for="upholsteryNo" class="form-check-label">No</label>
+                    </div>
+                </div>
+                <div class="form-group" id="upholsteryCleaningOptions" style="display:none;">
+                    <label>Which of these require a deep clean?</label>
+                    <br>
+                     <div class="counter">
+                        <label for="singleMattress">Single Mattress:</label>
+                        <div class="counter-controls">
+                            <button type="button" onclick="decrement('singleMattress')">-</button>
+                            <input type="number" id="singleMattress" name="singleMattress" value="0" min="0">
+                            <button type="button" onclick="increment('singleMattress')">+</button>
+                        </div>
+                     </div>
+                     <div class="counter">
+                        <label for="singleMattress">Double Mattress:</label>
+                        <div class="counter-controls">
+                            <button type="button" onclick="decrement('doubleMattress')">-</button>
+                            <input type="number" id="doubleMattress" name="doubleMattress" value="0" min="0">
+                            <button type="button" onclick="increment('doubleMattress')">+</button>
+                        </div>
+                     </div>
+                     <div class="counter">
+                        <label for="singleMattress">King Size Mattress:</label>
+                        <div class="counter-controls">
+                            <button type="button" onclick="decrement('kingMattress')">-</button>
+                            <input type="number" id="kingMattress" name="kingMattress" value="0" min="0">
+                            <button type="button" onclick="increment('kingMattress')">+</button>
+                        </div>
+                     </div>
+                     <div class="counter">
+                        <label for="singleMattress">Single Mattress:</label>
+                        <div class="counter-controls">
+                            <button type="button" onclick="decrement('singleMattress')">-</button>
+                            <input type="number" id="singleMattress" name="singleMattress" value="0" min="0">
+                            <button type="button" onclick="increment('singleMattress')">+</button>
+                        </div>
+                     </div>
+                </div>
+                <div class="form-group">
+                    <label>Preferred day(s) of the week:</label>
+                    <div class="form-check">
+                        <input type="checkbox" id="monday"class="form-check-input" name="preferredDays" value="Monday">
+                        <label for="monday" class="form-check-label">Mon</label>
+                    </div>
+
+                    <div class="form-check">
+                        <input type="checkbox" id="tuesday"class="form-check-input" name="preferredDays" value="Tuesday">
+                        <label for="tuesday" class="form-check-label">Tue</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" id="wednesday"class="form-check-input" name="preferredDays" value="Wednesday">
+                        <label for="wednesday" class="form-check-label">Wed</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" id="thursday"class="form-check-input" name="preferredDays" value="Thursday">
+                        <label for="thursday" class="form-check-label">Thurs</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" id="friday"class="form-check-input" name="preferredDays" value="Friday">
+                        <label for="friday" class="form-check-label">Fri</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" id="saturday"class="form-check-input" name="preferredDays" value="Saturday">
+                        <label for="saturday" class="form-check-label">Sat</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="checkbox" id="sunday"class="form-check-input" name="preferredDays" value="Sunday">
+                        <label for="sunday" class="fomform-check-label">Sun</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Preferred Time of the day:</label>
+                    <div class="form-check">
+                        <input type="radio" id="flexible" class="form-check-input" name="preferredTime" value="Flexible">
+                        <label for="flexible" class="form-check-label">Flexible</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="morning" class="form-check-input" name="preferredTime" value="Morning">
+                        <label for="morning" class="form-check-label">Morning (8:00 AM – 12:00 PM)</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="afternoon" class="form-check-input" name="preferredTime" value="Afternoon">
+                        <label for="afternoon" class="form-check-label">Afternoon (12:00 PM – 4:00 PM)</label> 
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" id="evening" class="form-check-input" name="preferredTime" value="Evening">
+                        <label for="evening" class="form-check-label">Evening (4:00 PM – 8:00 PM)</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="specialRequests">Do you have any special requests or instructions?</label>
+                <textarea id="specialRequests" name="specialRequests" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Contact Information</label>
+                <div class="form-group">
+                    <label for="contactName">Name:</label>
+                    <input type="text" id="contactName" name="contactName" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="contactPhone">Phone Number:</label>
+                    <input type="tel" id="contactPhone" name="contactPhone" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="contactEmail">Email Address:</label>
+                    <input type="email" id="contactEmail" name="contactEmail" class="form-control" required>
+                </div>
+            </div>
+        </form>
+        <button type="submit" class="btn btn-primary">Submit</button>
+  <div class="form-group">
+      <label>Total Cost: £<span id="totalCost">0</span></label>
+  </div>
+        </div>  
+    </div>
+    <form>
+      <script>
+        document.getElementById('commercial').addEventListener('change', function() {
+          document.getElementById('commercialDetails').style.display = this.checked ? 'block' : 'none';
+        });
+        document.getElementById('residential').addEventListener('change', function() {
+          if (this.checked) {
+            document.getElementById('commercialDetails').style.display = 'none';
+            document.getElementById('commercial').checked = false;
+          }
+        });
+        document.getElementById('residential').addEventListener('change', function() {
+        document.getElementById('residentialDetails').style.display = this.checked ? 'block' : 'none';
+        });
+        document.getElementById('commercial').addEventListener('change', function() {
+        if (this.checked) {
+        document.getElementById('residentialDetails').style.display = 'none';
+        document.getElementById('residential').checked = false;
+        }
+        document.getElementById("carpet_yes").addEventListener('change', function(){
+            document.getElementById("carpetCleaningOptions").style.display = this.checked ? 'block': 'none';
+        });
+        document.getElementById("carpet_no").addEventListener('change', function(){
+            if (this.checked){
+                document.getElementById('carpetCleaningOptions').style.display = 'none';
+                document.getElementById('carpet_yes').checked = false;
+            }
+        })
+    });
+    function changeValue(id, delta) {
+    var input = document.getElementById(id);
+    var value = parseInt(input.value) + delta;
+    if (value >= 0) {
+      input.value = value;
+    }
+  }
+  function increment(id) {
+    var input = document.getElementById(id);
+    input.value = parseInt(input.value) + 1;
+  }
+  function decrement(id) {
+    var input = document.getElementById(id);
+    if (input.value > 0) {
+      input.value = parseInt(input.value) - 1;
+    }
+  }
+  function toggleCarpetCleaning(show) {
+    document.getElementById('carpetCleaningOptions').style.display = show ? 'block' : 'none';
+  }
+
+  function toggleUpholsteryCleaning(show) {
+    document.getElementById('upholsteryCleaningOptions').style.display = show ? 'block' : 'none';
+  }
+      </script>
+      
+</body>
+</html>

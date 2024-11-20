@@ -1,0 +1,434 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cleaning Service</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'jhuapp/styles.css' %}">
+</head>
+<body>
+    <!--Header-->
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <!-- Logo on the Left -->
+                <a class="navbar-brand" href="#">Logo</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                <!-- Navigation Links Section on the Right -->
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="" class="nav-link">Services</a>
+                            <div class="dropdown-content">
+                                <div class="nested-dropdown">
+                                    <a href="#" class="nav-link">Domestic Cleaning</a>
+                                    <div class="nested-dropdown-content">
+                                        <a href="airbnb.html" class="nav-link">Airbnb</a>
+                                        <a href="deepclean.html" class="nav-link">Deep Cleaning</a>
+                                        <a href="midstay.html" class="nav-link">Midstay Shortlet Cleaning</a>
+                                        <a href="linenhire.html"class="nav-link">Linen Hire</a>
+                                    </div>
+                                </div>
+                                <a href="#" class="nav-link">Commercial Cleaning</a>
+                            </div>
+                        </li>
+                        <li class="nav-item mt-2">
+                            <a class=" btn-secondary rounded-pill px-2 py-2" href="register.html">Signin/Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+  </header>
+    <!--Main Section-->
+    <main class="hero-section">
+        <img 
+            src="https://images.unsplash.com/photo-1644027622521-d0ca669c40d7?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+            alt="Airbnb Cleaning Service" 
+            class="hero-image"
+        >
+        <div class="overlay"></div>
+        <div class="hero-content-wrapper">
+            <div class="content">
+                <h1>Airbnb Cleaning</h1>
+                <p>Picture your guests stepping into an <span class="highlight">immaculately clean and welcoming space</span>, where every detail has been thoughtfully prepared. At Jhu Cleans, we specialize in delivering pristine, guest-ready homes with our professional cleaning services. Whether it's a deep clean between stays or a refresh during a mid-stay short let, we ensure your property always shines.</p>
+                <p>We also offer convenient linen and towel hire, complete with all the essentials, helping you provide a <span class="highlight">five-star experience</span> and earn that coveted Superhost status.</p>
+                <a href="{% url 'form' %}" class="cta-button">Request a quote</a>
+            </div>
+        </div>
+    </main>
+    <main class="container mt-5">
+    <!--Tasks section-->
+        <section class="tasks-section">
+            <h2 class="text-center section-title">Tasks to be Performed</h2>
+            <ul>
+                <li>Dust all surfaces.</li>
+                <li>Sweep and mop hard floors.</li>
+                <li>Empty trash bins and replace liners.</li>
+                <li>Clean countertops and sanitize all kitchen appliances.</li>
+                <li>Sanitize high-touch areas.</li>
+                <li>Clean and disinfect the toilet, sink, shower, and bathtub.</li>
+                <li>Wipe down all surfaces, mirrors, and windowsills.</li>
+                <li>Remove used linens and towels, and replace them with fresh, clean ones.</li>
+            </ul>
+        </section>
+    <!--Pricing Section-->
+    <section class="pricing-section">
+        <h2 class="mt-5 mb-5 text-center section-title">Airbnb Cleaning Price</h2>
+        <div class="row">
+          <!-- Apartment -->
+          <div class="col-md-6 col-lg-4 mb-4">
+              <div class="card-custom">
+                  <div class="card-header">
+                      Apartment
+                  </div>
+                  <div class="card-body">
+                      <ul class="list-unstyled">
+                          <li>Flat Price: $200,000</li>
+                          <li>House Price: $250,000</li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+          <!-- Condo -->
+          <div class="col-md-6 col-lg-4 mb-4">
+              <div class="card-custom">
+                  <div class="card-header">
+                      Condo
+                  </div>
+                  <div class="card-body">
+                      <ul class="list-unstyled">
+                          <li>Flat Price: $300,000</li>
+                          <li>House Price: $350,000</li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+          <!--Villa -->
+          <div class="col-md-6 col-lg-4 mb-4">
+              <div class="card-custom">
+                  <div class="card-header">
+                      Villa
+                  </div>
+                  <div class="card-body">
+                      <ul class="list-unstyled">
+                          <li>Flat Price: $500,000</li>
+                          <li>House Price: $600,000</li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+    <!--Airbnb Linen section-->
+    <main class="hero-section container">
+        <img 
+            src="https://images.unsplash.com/photo-1726967023920-8f04895f11e0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Airbnb Cleaning Service" 
+            class="hero-image"
+        >
+        <div class="overlay"></div>
+        <div class="hero-content-wrapper">
+            <div class="content">
+                <h1>Airbnb(Linen Hire)</h1>
+                <p>There's nothing more welcoming than the feel of freshly laundered linens. Our linen hire service offers clean, crisp bedding and plush towels, ensuring your guests enjoy a luxurious, hotel-like experience. Our pricing is tailored to bed sizes, and includes:
+                </p>
+                <a href="airbnbquote.html" class="cta-button">Request a quote</a>
+            </div>
+        </div>
+    </main>
+  
+<div class="container my-4 mt-5">
+    <h2 class="text-center section-title">Linen Hire Prices</h2>
+    <div class="row">
+        <!-- Single Bed Card -->
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card-custom">
+                <div class="card-header">
+                    Single Bed (pack hire) £18
+                </div>
+                <div class="card-body">
+                    <ul class="list-unstyled">
+                        <li>1x Single Sheet</li>
+                        <li>1x Single Duvet cover</li>
+                        <li>2x Pillow Cases</li>
+                        <li>1x Hand Towel</li>
+                        <li>1x Bath Towel</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Double Bed Card -->
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card-custom">
+                <div class="card-header">
+                    Double Bed (pack hire) £19
+                </div>
+                <div class="card-body">
+                    <ul class="list-unstyled">
+                        <li>1x Double Sheet</li>
+                        <li>1x Double Duvet Cover</li>
+                        <li>4x Pillow Cases</li>
+                        <li>2x Hand Towels</li>
+                        <li>2x Bath Towels</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- King Bed Card -->
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card-custom">
+                <div class="card-header">
+                    King Bed (pack hire) £20
+                </div>
+                <div class="card-body">
+                    <ul class="list-unstyled">
+                        <li>1x King Sheet</li>
+                        <li>1x King Duvet Cover</li>
+                        <li>4x Pillow Cases</li>
+                        <li>2x Hand Towels</li>
+                        <li>2x Bath Towels</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Super King Bed Card -->
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card-custom">
+                <div class="card-header">
+                    Super King Bed (pack hire) £22
+                </div>
+                <div class="card-body">
+                    <ul class="list-unstyled">
+                        <li>1x Super King Sheet</li>
+                        <li>1x Super King Duvet Cover</li>
+                        <li>4x Pillow Cases</li>
+                        <li>2x Hand Towels</li>
+                        <li>2x Bath Towels</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Airbnb Midstay Section-->
+<main class="hero-section container">
+    <img 
+        src="https://images.unsplash.com/photo-1726967023920-8f04895f11e0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Airbnb Cleaning Service" 
+        class="hero-image"
+    >
+    <div class="overlay"></div>
+    <div class="hero-content-wrapper">
+        <div class="content">
+            <h1>Airbnb(Midstay Shorlet Clean)</h1>
+            <p>With our mid-stay service, your property stays as welcoming as it was on check-in, enhancing guest satisfaction, improving reviews, and maintaining your property's appeal for future bookings.
+            </p>
+            <a href="airbnbquote.html" class="cta-button">Request a quote</a>
+        </div>
+    </div>
+</main>
+    <!--FAQs-->
+    <div class="faq-section">
+        <h2 class="section-title text-center mt-3">Frequently Asked Questions</h2>
+        
+        <div class="faq-container">
+            <div class="faq-card">
+                <div class="faq-card-header">
+                    <button class="faq-trigger">
+                        What if my Inventory inspection fails?
+                    </button>
+                </div>
+                <div class="faq-content">
+                    <div class="faq-body">
+                        If we have done an end of tenancy cleaning at your property in London and your inspection inventory fails, then please contact us and we will arrange for our specialist cleaners to re-clean the property free of charge.
+                    </div>
+                </div>
+            </div>
+    
+            <div class="faq-card">
+                <div class="faq-card-header">
+                    <button class="faq-trigger">
+                        What is your cancellation/Rescheduling policy?
+                    </button>
+                </div>
+                <div class="faq-content">
+                    <div class="faq-body">
+                        We require at least 24 hours' notice for any cancellations or changes to cleaning and linen hire services. Late cancellations or failure to provide property access may incur a fee. This ensures we value both your time and that of our cleaners. By accepting our terms and conditions, you agree to the terms of this policy.
+                    </div>
+                </div>
+            </div>
+    
+            <div class="faq-card">
+                <div class="faq-card-header">
+                    <button class="faq-trigger">
+                        How do I pay for cleaning?
+                    </button>
+                </div>
+                <div class="faq-content">
+                    <div class="faq-body">
+                        We accept debit and credit cards only. Payment is made on our website via a secure 3rd party provider. Funds will only be taken from your card once the job has been completed. However, please note that as soon as the booking is confirmed, the estimated amount of the job is pre-authorised on your card.
+                    </div>
+                </div>
+            </div>
+    
+            <div class="faq-card">
+                <div class="faq-card-header">
+                    <button class="faq-trigger">
+                        Do you offer discounts for recurring or long-term bookings?
+                    </button>
+                </div>
+                <div class="faq-content">
+                    <div class="faq-body">
+                        Yes, we offer discounts for regular clients and long-term bookings. If you need ongoing cleaning or linen hire services, please contact us for a tailored package.
+                    </div>
+                </div>
+            </div>
+    
+            <div class="faq-card">
+                <div class="faq-card-header">
+                    <button class="faq-trigger">
+                        Do I get a refund if I am not happy with the service?
+                    </button>
+                </div>
+                <div class="faq-content">
+                    <div class="faq-body">
+                        Our Cleaning Company maintains a no-refund policy. If a client is dissatisfied with the service provided, we ask that any concerns be reported to us within 24 hours of the service's completion. Upon review and confirmation of the issue, we will promptly address and rectify the problem at no additional cost within 48 hours.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+    <!--Footer Section-->
+    <footer class="footer">
+      <div class="container-fluid">
+          <div class="row">
+              <!-- About Section -->
+              <div class="col-md-4">
+                  <h5>About Us</h5>
+                  <p>We provide top-notch cleaning services tailored to your needs. Our team is dedicated to ensuring your space is spotless and welcoming.</p>
+              </div>
+              <!-- Links Section -->
+              <div class="col-md-4">
+                  <h5>Quick Links</h5>
+                  <ul class="list-unstyled">
+                      <li><a href="index.html">Home</a></li>
+                      <li><a href="about.html">About</a></li>
+                      <li><a href="register.html">Register</a></li>
+                  </ul>
+              </div>
+              <!-- Contact Section -->
+              <div class="col-md-4">
+                  <h5>Contact Us</h5>
+                  <ul class="list-unstyled">
+                      <li>Email: info@jhucleans.com</li>
+                      <li>Phone: +123 456 7890</li>
+                      <li>Address: 123 Clean St, Clean City, CL 12345</li>
+                  </ul>
+                  <div class="social-icons">
+                      <a href="#"><i class="fab fa-facebook-f"></i></a>
+                      <a href="#"><i class="fab fa-twitter"></i></a>
+                      <a href="#"><i class="fab fa-instagram"></i></a>
+                      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                  </div>
+              </div>
+          </div>
+          <div class="row mt-3">
+              <div class="col text-center">
+                  <p>© 2024 Jhu Cleans. All rights reserved.</p>
+              </div>
+          </div>
+      </div>
+  </footer>
+    <script>
+
+        // Add this function to handle the change in value for the new sections
+function changeValue(id, delta) {
+  const input = document.getElementById(id);
+  const value = parseInt(input.value) + delta;
+  if (value >= 0) {
+    input.value = value;
+  }
+}
+document.addEventListener('DOMContentLoaded', function() {
+  const propertyTypeInputs = document.querySelectorAll('input[name="propertyType"]');
+  const cleaningTypeInputs = document.querySelectorAll('input[name="cleaningType"]');
+  const linenHireInputs = document.querySelectorAll('input[name="linenHire"]');
+  
+  propertyTypeInputs.forEach(input => {
+    input.addEventListener('change', function() {
+      const bedroomsBathrooms = document.getElementById('bedroomsBathrooms');
+      if (this.value === 'Studio') {
+        bedroomsBathrooms.style.display = 'none';
+      } else {
+        bedroomsBathrooms.style.display = 'block';
+      }
+    });
+  });
+  
+  cleaningTypeInputs.forEach(input => {
+    input.addEventListener('change', function() {
+      const midStayFrequency = document.getElementById('midStayFrequency');
+      if (this.value === 'Mid-Stay Cleaning') {
+        midStayFrequency.style.display = 'block';
+      } else {
+        midStayFrequency.style.display = 'none';
+      }
+    });
+  });
+  
+  linenHireInputs.forEach(input => {
+    input.addEventListener('change', function() {
+      const linenDetails = document.getElementById('linenDetails');
+      if (this.value === 'Yes') {
+        linenDetails.style.display = 'block';
+      } else {
+        linenDetails.style.display = 'none';
+      }
+    });
+  });
+});
+
+function changeValue(id, delta) {
+  const input = document.getElementById(id);
+  const value = parseInt(input.value) + delta;
+  if (value >= 0) {
+    input.value = value;
+  }
+}
+
+//if/else
+        document.addEventListener('DOMContentLoaded', function() {
+  const consumablesInputs = document.querySelectorAll('input[name="consumables"]');
+  
+  consumablesInputs.forEach(input => {
+    input.addEventListener('change', function() {
+      const consumablesDetails = document.getElementById('consumablesDetails');
+      if (this.value === 'Yes') {
+        consumablesDetails.style.display = 'block';
+      } else {
+        consumablesDetails.style.display = 'none';
+      }
+    });
+  });
+});
+
+</script>
+    <script src="index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+</body>
+</html>
+

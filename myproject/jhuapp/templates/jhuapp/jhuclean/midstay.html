@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linen Hire Service</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="midstay.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            color: #000;
+        }
+        .header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .content {
+            padding: 20px;
+        }
+        .table thead {
+            background-color: #007bff;
+            color: #fff;
+        }
+        .faq-section {
+            width: 80%;
+            margin: auto;
+            font-family: Arial, sans-serif;
+        }
+        .faq-header {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .faq-item {
+            margin-bottom: 10px;
+        }
+        .faq-question {
+            cursor: pointer;
+            padding: 10px;
+            background-color: #f1f1f1;
+            border: 1px solid #ccc;
+        }
+        .faq-answer {
+            display: none;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Midstay Shortlet Service</h1>
+    </div>
+    <p>Give your guests the gift of a refreshed, spotless space during their stay with our mid-stay short let cleaning service. Whether they're staying for a week or longer, our expert team ensures your property remains clean, comfortable, and inviting throughout.
+        Let us take care of the cleaning so your guests can continue to enjoy their stay—and you can enjoy the peace of mind knowing your property is well-maintained.
+        </p>
+        <form>
+            <h2>CLEANING SERVICE QUOTE REQUEST FORM</h2>
+            
+            <div class="form-group">
+                <label for="propertyAddress">Property Address (Street, City, Postal Code):</label>
+                <input type="text" class="form-control" id="propertyAddress" placeholder="Enter address (London only)" pattern="^[A-Z]{1,2}\d[A-Z\d]? ?\d[A-Z]{2}$" required>
+            </div>
+        
+            <div class="form-group">
+                <label>Type of Property:</label>
+                <div>
+                    <input type="radio" name="propertyType" value="flat"> Flat
+                    <input type="radio" name="propertyType" value="house"> House
+                    <input type="radio" name="propertyType" value="studio" onclick="toggleBedroomsBathrooms(false)"> Studio
+                </div>
+            </div>
+        
+            <div id="bedroomsBathroomsSection">
+                <div class="form-group">
+                    <label>Number of Bedrooms:</label>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('bedrooms', -1)">-</button>
+                    <span id="bedroomsCounter">0</span>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('bedrooms', 1)">+</button>
+                </div>
+        
+                <div class="form-group">
+                    <label>Number of Bathrooms:</label>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('bathrooms', -1)">-</button>
+                    <span id="bathroomsCounter">0</span>
+                    <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('bathrooms', 1)">+</button>
+                </div>
+            </div>
+        
+            <div class="form-group">
+                <label>Type of Cleaning Required:</label>
+                <div>
+                    <input type="radio" name="cleaningType" value="checkInOut" onclick="toggleLinenHire(true)"> Check-in/Check-out Cleaning
+                    <input type="radio" name="cleaningType" value="midStay" onclick="toggleFrequency(true)"> Mid-Stay Cleaning
+                    <input type="radio" name="cleaningType" value="endOfTenancy" onclick="toggleLinenHire(false)"> End-of-Tenancy Deep Clean
+                </div>
+            </div>
+        
+            <div id="frequencySection" style="display: none;">
+                <div class="form-group">
+                    <label>Frequency of Service:</label>
+                    <div>
+                        <input type="radio" name="frequency" value="weekly"> Weekly
+                        <input type="radio" name="frequency" value="biWeekly"> Bi-weekly
+                    </div>
+                </div>
+            </div>
+        
+            <div id="linenHireSection" style="display: none;">
+                <div class="form-group">
+                    <label>Would you like to include linen hire in your package?</label>
+                    <div>
+                        <input type="radio" name="linenHire" value="yes" onclick="toggleLinenDetails(true)"> Yes
+                        <input type="radio" name="linenHire" value="no" onclick="toggleLinenDetails(false)"> No
+                    </div>
+                </div>
+        
+                <div id="linenDetailsSection" style="display: none;">
+                    <div class="form-group">
+                        <label>What type of bed sizes need linens? (Check all that apply):</label>
+                        <div>
+                            <label>Single</label>
+                            <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('single', -1)">-</button>
+                            <span id="singleCounter">0</span>
+                            <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('single', 1)">+</button>
+                        </div>
+                        <div>
+                            <label>Double</label>
+                            <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('double', -1)">-</button>
+                            <span id="doubleCounter">0</span>
+                            <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('double', 1)">+</button>
+                        </div>
+                        <div>
+                            <label>King</label>
+                            <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('king', -1)">-</button>
+                            <span id="kingCounter">0</span>
+                            <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('king', 1)">+</button>
+                        </div>
+                        <div>
+                            <label>Super King</label>
+                            <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('superKing', -1)">-</button>
+                            <span id="superKingCounter">0</span>
+                            <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('superKing', 1)">+</button>
+                        </div>
+                    </div>
+        
+                    <div class="form-group">
+                        <label>Do you require any additional bedding items? (Check all that apply):</label>
+                        <div>
+                            <label>Duvets</label>
+                            <div>
+                                <label>Single</label>
+                                <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('duvetSingle', -1)">-</button>
+                                <span id="duvetSingleCounter">0</span>
+                                <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('duvetSingle', 1)">+</button>
+                            </div>
+                            <div>
+                                <label>Double</label>
+                                <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('duvetDouble', -1)">-</button>
+                                <span id="duvetDoubleCounter">0</span>
+                                <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('duvetDouble', 1)">+</button>
+                            </div>
+                            <div>
+                                <label>King</label>
+                                <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('duvetKing', -1)">-</button>
+                                <span id="duvetKingCounter">0</span>
+                                <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('duvetKing', 1)">+</button>
+                            </div>
+                            <div>
+                                <label>Super King</label>
+                                <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('duvetSuperKing', -1)">-</button>
+                                <span id="duvetSuperKingCounter">0</span>
+                                <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('duvetSuperKing', 1)">+</button>
+                            </div>
+                        </div>
+                        <div>
+                            <label>Pillows</label>
+                            <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('pillows', -1)">-</button>
+                            <span id="pillowsCounter">0</span>
+                            <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('pillows', 1)">+</button>
+                        </div>
+                        <div>
+                            <label>Pillow protector</label>
+                            <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('pillowProtector', -1)">-</button>
+                            <span id="pillowProtectorCounter">0</span>
+                            <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('pillowProtector', 1)">+</button>
+                        </div>
+                        <div>
+                            <label>Mattress Protectors</label>
+                            <div>
+                                <label>Single</label>
+                                <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('mattressSingle', -1)">-</button>
+                                <span id="mattressSingleCounter">0</span>
+                                <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('mattressSingle', 1)">+</button>
+                            </div>
+                            <div>
+                                <label>Double</label>
+                                <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('mattressDouble', -1)">-</button>
+                                <span id="mattressDoubleCounter">0</span>
+                                <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('mattressDouble', 1)">+</button>
+                            </div>
+                            <div>
+                                <label>King</label>
+                                <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('mattressKing', -1)">-</button>
+                                <span id="mattressKingCounter">0</span>
+                                <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('mattressKing', 1)">+</button>
+                            </div>
+                            <div>
+                                <label>Super King</label>
+                                <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('mattressSuperKing', -1)">-</button>
+                                <span id="mattressKingCounter">0</span>
+                                <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('mattressSuperKing', 1)">+</button>
+                            </div>
+                        </div>
+                        <div>
+                            <label>Blankets</label>
+                            <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('blankets', -1)">-</button>
+                            <span id="blanketsCounter">0</span>
+                            <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('blankets', 1)">+</button>
+                        </div>
+                        <div>
+                            <label>Kitchen Towels</label>
+                            <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('kitchenTowels', -1)">-</button>
+                            <span id="kitchenTowelsCounter">0</span>
+                            <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('kitchenTowels', 1)">+</button>
+                        </div>
+                        <div>
+                            <label>Bath Mats</label>
+                            <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('bathMats', -1)">-</button>
+                            <span id="bathMatsCounter">0</span>
+                            <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('bathMats', 1)">+</button>
+                        </div>
+                        <div>
+                            <label>Bathrobe and pair of slippers</label>
+                            <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('bathrobeSlippers', -1)">-</button>
+                            <span id="bathrobeSlippersCounter">0</span>
+                            <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('bathrobeSlippers', 1)">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>Would you like to include consumable replacement?</label>
+                <div>
+                    <input type="radio" name="consumableReplacement" id="consumableYes" value="yes" onclick="toggleConsumables(true)"> Yes
+                    <input type="radio" name="consumableReplacement" id="consumableNo" value="no" onclick="toggleConsumables(false)"> No
+                </div>
+            </div>
+            
+            <div id="consumablesSection" style="display: none;">
+                <div class="form-group">
+                    <label>Consumables Required (Check all that apply):</label>
+                    <div>
+                        <label>Toilet Paper pack</label>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('toiletPaper', -1)">-</button>
+                        <span id="toiletPaperCounter">0</span>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('toiletPaper', 1)">+</button>
+                    </div>
+                    <div>
+                        <label>Paper Towels pack</label>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('paperTowels', -1)">-</button>
+                        <span id="paperTowelsCounter">0</span>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('paperTowels', 1)">+</button>
+                    </div>
+                    <div>
+                        <label>Toiletries set</label>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('toiletriesSet', -1)">-</button>
+                        <span id="toiletriesSetCounter">0</span>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('toiletriesSet', 1)">+</button>
+                        <p>The set includes:
+                            <br>1x shampoo 30ml
+                            <br>1x conditioner 30ml
+                            <br>1x shower gel 30ml
+                            <br>1x body lotion 30ml
+                            <br>1x hand soap
+                        </p>
+                    </div>
+                    <div>
+                        <label>Hand soap</label>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('handSoap', -1)">-</button>
+                        <span id="handSoapCounter">0</span>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('handSoap', 1)">+</button>
+                    </div>
+                    <div>
+                        <label>Body soap</label>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('bodySoap', -1)">-</button>
+                        <span id="bodySoapCounter">0</span>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('bodySoap', 1)">+</button>
+                    </div>
+                    <div>
+                        <label>Shampoo</label>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('shampoo', -1)">-</button>
+                        <span id="shampooCounter">0</span>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('shampoo', 1)">+</button>
+                    </div>
+                    <div>
+                        <label>Conditioner</label>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('conditioner', -1)">-</button>
+                        <span id="conditionerCounter">0</span>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('conditioner', 1)">+</button>
+                    </div>
+                    <div>
+                        <label>Shower cap</label>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('showerCap', -1)">-</button>
+                        <span id="showerCapCounter">0</span>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('showerCap', 1)">+</button>
+                    </div>
+                    <div>
+                        <label>Toothbrush & Toothpaste</label>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('toothbrushToothpaste', -1)">-</button>
+                        <span id="toothbrushToothpasteCounter">0</span>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('toothbrushToothpaste', 1)">+</button>
+                    </div>
+                    <div>
+                        <label>Dishwasher Tablets pack</label>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('dishwasherTablets', -1)">-</button>
+                        <span id="dishwasherTabletsCounter">0</span>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('dishwasherTablets', 1)">+</button>
+                    </div>
+                    <div>
+                        <label>Dishwash liquid</label>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('dishwashLiquid', -1)">-</button>
+                        <span id="dishwashLiquidCounter">0</span>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('dishwashLiquid', 1)">+</button>
+                    </div>
+                    <div>
+                        <label>Coffee</label>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('coffee', -1)">-</button>
+                        <span id="coffeeCounter">0</span>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('coffee', 1)">+</button>
+                    </div>
+                    <div>
+                        <label>Tea</label>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('tea', -1)">-</button>
+                        <span id="teaCounter">0</span>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('tea', 1)">+</button>
+                    </div>
+                    <div>
+                        <label>Sugar</label>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('sugar', -1)">-</button>
+                        <span id="sugarCounter">0</span>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('sugar', 1)">+</button>
+                    </div>
+                    <div>
+                        <label>Cleaning sponges</label>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('cleaningSponges', -1)">-</button>
+                        <span id="cleaningSpongesCounter">0</span>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('cleaningSponges', 1)">+</button>
+                    </div>
+                    <div>
+                        <label>Garbage bag</label>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('garbageBag', -1)">-</button>
+                        <span id="garbageBagCounter">0</span>
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="updateCounter('garbageBag', 1)">+</button>
+                        <span id="garbageBagCounter">0</span>
+                    </div>
+                    <div>
+                        <label>Other:</label>
+                        <input type="text" class="form-control" id="otherConsumables">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>How can the operative access the building?</label>
+                <div>
+                    <input type="radio" name="accessMethod" value="atProperty"> I will be at the property
+                    <input type="radio" name="accessMethod" value="concierge"> Through a concierge
+                    <input type="radio" name="accessMethod" value="keySafe"> Key safe
+                    <input type="radio" name="accessMethod" value="hiddenKey"> Hidden key
+                    <input type="radio" name="accessMethod" value="estateAgent"> Using Keys collected from the local estate agent
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>Do you have any special cleaning requests or instructions?</label>
+                <textarea class="form-control" rows="3"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label>Preferred Date for Service to Begin:</label>
+                <input type="date" class="form-control">
+            </div>
+            
+            <div class="form-group">
+                <label>Any ongoing maintenance or repairs needed in the property that should be noted?</label>
+                <textarea class="form-control" rows="3"></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            <!--FAQs Section-->
+    <div class="faq-section">
+        <div class="faq-header">FAQs</div>
+            <div class="faq-item">
+                <div class="faq-question">Do you clean outdoor spaces like patios or balconies?</div>
+                <div class="faq-answer">Yes, we can clean outdoor areas like patios, balconies, or terraces as part of the mid-stay cleaning if requested.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What if the property is excessively dirty or messy during a mid-stay clean?</div>
+                <div class="faq-answer">If we find the property in an excessively dirty or unkempt state, we may need more time to complete the cleaning. Additional fees may apply in such cases, and we will inform you before proceeding.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Will I receive a report or confirmation after the mid-stay cleaning?</div>
+                <div class="faq-answer">Yes, we can provide a brief report or confirmation once the cleaning is completed, including any issues we notice during the cleaning (e.g., damages, low supplies).</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Can you report any damages or missing items found during cleaning?</div>
+                <div class="faq-answer">While we do not conduct formal inspections, our cleaners will notify you if they come across any visible damage or missing items during the cleaning.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Can I inspect the property after a mid-stay clean?</div>
+                <div class="faq-answer">Yes, we encourage hosts or property managers to inspect the property after the clean to ensure everything meets your expectations.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Do you offer additional services, like restocking supplies or running errands?</div>
+                <div class="faq-answer">Yes, we can restock basic supplies such as toiletries, toilet paper, and kitchen essentials if requested. We can either use the supplies you provide or purchase them at an additional cost.</div>
+           </div>
+        </div>
+    </div>
+        <footer class="footer-section py-4 bg-dark text-light">
+            <div class="container">
+                <div class="row">
+                    
+                    <!-- Company Information -->
+                    <div class="col-md-4 mb-3">
+                      <h5>About Our Company</h5>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vitae est at ligula faucibus laoreet.</p>
+                    </div>
+                    
+                    <!-- Quick Links -->
+                    <div class="col-md-4 mb-3">
+                      <h5>Quick Links</h5>
+                      <ul class="list-unstyled">
+                        <li><a href="#services" class="text-light">Our Services</a></li>
+                        <li><a href="#about" class="text-light">About Us</a></li>
+                        <li><a href="#contact" class="text-light">Contact Us</a></li>
+                        <li><a href="#faq" class="text-light">FAQs</a></li>
+                      </ul>
+                    </div>
+                    
+                    <!-- Legal Links -->
+                    <div class="col-md-4 mb-3">
+                      <h5>Legal</h5>
+                      <ul class="list-unstyled">
+                        <li><a href="#privacy-policy" class="text-light">Privacy Policy</a></li>
+                        <li><a href="#terms-of-service" class="text-light">Terms of Service</a></li>
+                      </ul>
+                    </div>
+                    
+                  </div>
+                  <div class="text-center mt-4">
+                    <p class="mb-0">&copy; 2024 Cleaning Service. All rights reserved.</p>
+                  </div>
+                </div>
+              </footer>
+            
+            <script>
+                document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const answer = item.nextElementSibling;
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+            });
+        });
+                function updateCounter(id, increment) {
+                    const counter = document.getElementById(id + 'Counter');
+                    let count = parseInt(counter.textContent);
+                    count = Math.max(0, count + increment);
+                    counter.textContent = count;
+                }
+            
+                function toggleBedroomsBathrooms(show) {
+                    const section = document.getElementById('bedroomsBathroomsSection');
+                    section.style.display = show ? 'block' : 'none';
+                }
+            
+                function toggleFrequency(show) {
+                    const section = document.getElementById('frequencySection');
+                    section.style.display = show ? 'block' : 'none';
+                }
+            
+                function toggleLinenHire(show) {
+                    const section = document.getElementById('linenHireSection');
+                    section.style.display = show ? 'block' : 'none';
+                }
+            
+                function toggleLinenDetails(show) {
+                    const section = document.getElementById('linenDetailsSection');
+                    section.style.display = show ? 'block' : 'none';
+                }
+            
+                function toggleConsumables(show) {
+                    const section = document.getElementById('consumablesSection');
+                    section.style.display = show ? 'block' : 'none';
+                }
+            </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+            
+                        
